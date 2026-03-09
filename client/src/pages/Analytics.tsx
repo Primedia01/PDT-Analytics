@@ -1,56 +1,66 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { malls, assets, portfolioData } from "@/lib/mock-data";
+import { useMalls, useAssets } from "@/lib/api";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
 import { AIInsights } from "@/components/AIInsights";
 import { useAuth } from "@/lib/auth";
-import { Building2 } from "lucide-react";
+import { Building2, Loader2 } from "lucide-react";
 
 export default function Analytics() {
   const { user } = useAuth();
+  const { data: mallsData, isLoading: mallsLoading } = useMalls();
+  const { data: assetsData, isLoading: assetsLoading } = useAssets();
 
-  // Protect route - theoretically this should be at the router level, but we handle it here for mockup simplicity
   if (user.role === "advertiser" || user.role === "sales" || user.role === "mall_partner") {
     return (
       <div className="flex h-[80vh] items-center justify-center p-8 animate-in fade-in">
         <div className="text-center">
           <Building2 className="h-12 w-12 text-muted-foreground mx-auto mb-4 opacity-50" />
-          <h2 className="text-2xl font-bold">Access Restricted</h2>
-          <p className="text-muted-foreground mt-2">Your role ({user.role}) does not have access to internal portfolio analytics.</p>
+          <h2 className="text-2xl font-bold" data-testid="text-access-restricted">Access Restricted</h2>
+          <p className="text-muted-foreground mt-2" data-testid="text-role-message">Your role ({user.role}) does not have access to internal portfolio analytics.</p>
         </div>
       </div>
     );
   }
 
-  // Admin and Internal roles only past this point
-  
-  const accessibleAssets = assets.filter(a => a.tenant_id === user.tenant_id);
+  if (mallsLoading || assetsLoading) {
+    return (
+      <div className="flex h-[80vh] items-center justify-center p-8 animate-in fade-in">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    );
+  }
 
-  const assetsByType = accessibleAssets.reduce((acc, curr) => {
-    acc[curr.asset_type] = (acc[curr.asset_type] || 0) + 1;
+  const malls = mallsData ?? [];
+  const assets = assetsData ?? [];
+
+  const accessibleAssets = assets.filter((a: any) => a.tenantId === user.tenantId);
+
+  const assetsByType = accessibleAssets.reduce((acc: Record<string, number>, curr: any) => {
+    acc[curr.assetType] = (acc[curr.assetType] || 0) + 1;
     return acc;
-  }, {} as Record<string, number>);
+  }, {});
 
   const pieData = Object.entries(assetsByType).map(([name, value]) => ({ name, value }));
   const COLORS = ['hsl(var(--chart-1))', 'hsl(var(--chart-2))', 'hsl(var(--chart-3))', 'hsl(var(--chart-4))', 'hsl(var(--chart-5))'];
 
   const mallPerformance = [...malls]
-    .sort((a, b) => b.footfall - a.footfall)
+    .sort((a: any, b: any) => b.footfall - a.footfall)
     .slice(0, 10)
-    .map(m => ({
+    .map((m: any) => ({
       name: m.name.replace('Premium Outlet ', ''),
       footfall: m.footfall,
-      impressions: accessibleAssets.filter(a => a.mall_id === m.id).reduce((sum, a) => sum + a.weekly_impressions, 0)
+      impressions: accessibleAssets.filter((a: any) => a.mallId === m.id).reduce((sum: number, a: any) => sum + a.weeklyImpressions, 0)
     }));
 
   return (
     <div className="p-8 space-y-8 animate-in fade-in duration-500">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Portfolio Analytics</h1>
+        <h1 className="text-3xl font-bold tracking-tight" data-testid="text-analytics-title">Portfolio Analytics</h1>
         <p className="text-muted-foreground mt-2">Deep dive into performance metrics across all locations.</p>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
-        <Card className="border-border/50">
+        <Card className="border-border/50" data-testid="card-asset-distribution">
           <CardHeader>
             <CardTitle className="text-lg">Asset Distribution by Type</CardTitle>
           </CardHeader>
@@ -79,7 +89,7 @@ export default function Analytics() {
           </CardContent>
         </Card>
 
-        <Card className="border-border/50">
+        <Card className="border-border/50" data-testid="card-location-performance">
           <CardHeader>
             <CardTitle className="text-lg">Top 10 Locations Performance (Weekly)</CardTitle>
           </CardHeader>

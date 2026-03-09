@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { malls, assets } from "@/lib/mock-data";
+import { useMalls, useAssets, useCreateCampaign } from "@/lib/api";
 import { CheckCircle2, TrendingUp, Users, Target, CreditCard, Sparkles, Building2 } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -15,6 +15,10 @@ export function CampaignSimulator() {
   const [isLaunched, setIsLaunched] = useState(false);
   const [results, setResults] = useState<any>(null);
   const { user } = useAuth();
+  const { data: malls } = useMalls();
+  const { data: allAssets } = useAssets();
+  const createCampaign = useCreateCampaign();
+  const formRef = useRef<HTMLFormElement>(null);
   
   const isAdvertiser = user.role === "advertiser";
 
@@ -23,22 +27,36 @@ export function CampaignSimulator() {
     setIsRunning(true);
     setIsLaunched(false);
     
-    // Mock simulation delay to mimic AI optimization engine
     setTimeout(() => {
       setIsRunning(false);
       
-      // Generate some dynamic pricing for the results based on mock data
-      const baseCost = 120000;
-      const optimizedCost = Math.round(baseCost * 0.85); // AI saved 15%
+      const topAssets = (allAssets || [])
+        .sort((a: any, b: any) => (b.engagementScore || 0) - (a.engagementScore || 0))
+        .slice(0, 3);
+
+      const recommendedAssets = topAssets.map((asset: any) => {
+        const mall = (malls || []).find((m: any) => m.id === asset.mallId);
+        return {
+          name: `${mall?.name || "Unknown"} ${asset.assetName}`,
+          type: asset.assetType,
+          score: asset.engagementScore,
+          price: Math.round(asset.dailyImpressions * 3),
+        };
+      });
+
+      const baseCost = recommendedAssets.reduce((sum: number, a: any) => sum + a.price, 0) || 120000;
+      const optimizedCost = Math.round(baseCost * 0.85);
+      
+      const totalImpressions = topAssets.reduce((sum: number, a: any) => sum + (a.weeklyImpressions || 0), 0) * 4;
       
       setResults({
-        recommendedAssets: [
+        recommendedAssets: recommendedAssets.length > 0 ? recommendedAssets : [
           { name: "Sandton City Escalators", type: "Escalator Panel", score: 98, price: 15000 },
           { name: "Mall of Africa Entrance", type: "Screen", score: 94, price: 22000 },
           { name: "Rosebank Mall Atrium", type: "Digital Billboard", score: 89, price: 35000 }
         ],
-        impressions: "8.7M",
-        reach: "3.4M",
+        impressions: totalImpressions > 0 ? `${(totalImpressions / 1000000).toFixed(1)}M` : "8.7M",
+        reach: totalImpressions > 0 ? `${(totalImpressions * 0.39 / 1000000).toFixed(1)}M` : "3.4M",
         cost: optimizedCost,
         aiInsight: "Budget reallocated from underperforming corridor lightboxes to high-engagement digital screens, resulting in a 15% lower CPM."
       });
@@ -46,7 +64,27 @@ export function CampaignSimulator() {
   };
 
   const handleLaunch = () => {
-    setIsLaunched(true);
+    const form = formRef.current;
+    const brandInput = form?.querySelector<HTMLInputElement>('#brand');
+    const budgetInput = form?.querySelector<HTMLInputElement>('#budget');
+    const durationInput = form?.querySelector<HTMLInputElement>('#duration');
+    const durationWeeks = parseInt(durationInput?.value || "4");
+    const now = new Date();
+    const endDate = new Date(now.getTime() + durationWeeks * 7 * 24 * 60 * 60 * 1000);
+
+    createCampaign.mutate({
+      id: `CAMP-${Date.now()}`,
+      name: brandInput?.value || "New Campaign",
+      advertiserTenantId: user.tenantId || "TENANT-2",
+      startDate: now.toISOString().split("T")[0],
+      endDate: endDate.toISOString().split("T")[0],
+      budget: parseInt(budgetInput?.value || "150000"),
+      status: "active",
+    }, {
+      onSuccess: () => {
+        setIsLaunched(true);
+      }
+    });
   };
 
   return (
@@ -70,7 +108,7 @@ export function CampaignSimulator() {
           </TabsList>
           
           <TabsContent value="build">
-            <form onSubmit={handleSimulate} className="space-y-4">
+            <form ref={formRef} onSubmit={handleSimulate} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="brand">Brand / Campaign Name</Label>
                 <Input id="brand" placeholder="e.g. Summer Collection Launch" required />

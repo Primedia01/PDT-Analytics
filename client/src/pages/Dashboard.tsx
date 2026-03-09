@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { portfolioStats, portfolioData, malls, assets, campaigns } from "@/lib/mock-data";
+import { useMalls, useAssets, useCampaigns, usePortfolioStats, useAnalytics } from "@/lib/api";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
-import { Building2, Eye, Users, MonitorPlay, ArrowUpRight, ArrowDownRight, AlertTriangle, Target } from "lucide-react";
+import { Building2, Eye, Users, MonitorPlay, ArrowUpRight, ArrowDownRight, AlertTriangle, Target, Loader2 } from "lucide-react";
 import { MallMap } from "@/components/MallMap";
 import { useAuth } from "@/lib/auth";
 
@@ -10,35 +10,55 @@ export default function Dashboard() {
   const isAdvertiser = user.role === "advertiser";
   const isMallPartner = user.role === "mall_partner";
 
-  // Filter malls for Mall Partner
-  const allowedMalls = isMallPartner && user.allowedMalls ? malls.filter(m => user.allowedMalls?.includes(m.id)) : malls;
-  const mallIds = allowedMalls.map(m => m.id);
-  
-  // Filter assets based on role
-  let accessibleAssets = assets;
+  const { data: allMalls = [], isLoading: mallsLoading } = useMalls();
+  const { data: allAssets = [], isLoading: assetsLoading } = useAssets();
+  const { data: allCampaigns = [], isLoading: campaignsLoading } = useCampaigns();
+  const { data: stats, isLoading: statsLoading } = usePortfolioStats();
+  const { data: analyticsPoints = [], isLoading: analyticsLoading } = useAnalytics(30);
+
+  const isLoading = mallsLoading || assetsLoading || campaignsLoading || statsLoading || analyticsLoading;
+
+  const allowedMalls = isMallPartner && user.allowedMalls ? allMalls.filter((m: any) => user.allowedMalls?.includes(m.id)) : allMalls;
+  const mallIds = allowedMalls.map((m: any) => m.id);
+
+  let accessibleAssets = allAssets;
   if (isMallPartner) {
-    accessibleAssets = assets.filter(a => mallIds.includes(a.mall_id));
+    accessibleAssets = allAssets.filter((a: any) => mallIds.includes(a.mallId));
   } else if (isAdvertiser) {
-    // Advertisers don't see raw assets on dashboard by default, maybe campaign specific ones
     accessibleAssets = [];
   }
 
-  // Calculate mock occupancy
   const totalInventory = accessibleAssets.length || 1;
-  const soldInventory = Math.floor(totalInventory * 0.71); // 71%
+  const soldInventory = Math.floor(totalInventory * 0.71);
   const occupancyRate = isAdvertiser ? 0 : Math.round((soldInventory / totalInventory) * 100);
 
-  // Advertiser specific data
-  const userCampaigns = campaigns.filter(c => c.advertiser_tenant_id === user.tenant_id);
+  const userCampaigns = allCampaigns.filter((c: any) => c.advertiserTenantId === user.tenantId);
   const activeCampaigns = userCampaigns.length;
+
+  const portfolioData = analyticsPoints.map((p: any) => ({
+    date: p.date,
+    impressions: p.impressions,
+    footfall: p.footfall,
+  }));
+
+  if (isLoading) {
+    return (
+      <div className="p-8 flex items-center justify-center h-[60vh]" data-testid="dashboard-loading">
+        <div className="flex flex-col items-center gap-4">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+          <p className="text-muted-foreground">Loading dashboard data…</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="p-8 space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">
+        <h1 className="text-3xl font-bold tracking-tight" data-testid="text-dashboard-title">
           {isAdvertiser ? "Campaign Dashboard" : isMallPartner ? "Mall Dashboard" : "Portfolio Dashboard"}
         </h1>
-        <p className="text-muted-foreground mt-2">
+        <p className="text-muted-foreground mt-2" data-testid="text-dashboard-subtitle">
           {isAdvertiser 
             ? `Overview of your active campaigns for ${user.organization}.`
             : isMallPartner
@@ -48,7 +68,6 @@ export default function Dashboard() {
         </p>
       </div>
 
-      {/* KPI Cards */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {isAdvertiser ? (
           <>
@@ -58,7 +77,7 @@ export default function Dashboard() {
                 <Target className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold">{activeCampaigns}</div>
+                <div className="text-3xl font-bold" data-testid="text-active-campaigns">{activeCampaigns}</div>
                 <p className="text-xs text-muted-foreground mt-1">Running currently</p>
               </CardContent>
             </Card>
@@ -68,7 +87,7 @@ export default function Dashboard() {
                 <Building2 className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold">R 500k</div>
+                <div className="text-3xl font-bold" data-testid="text-campaign-spend">R 500k</div>
                 <p className="text-xs text-muted-foreground mt-1">This month</p>
               </CardContent>
             </Card>
@@ -78,7 +97,7 @@ export default function Dashboard() {
                 <Users className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold">1.2M</div>
+                <div className="text-3xl font-bold" data-testid="text-est-reach">1.2M</div>
                 <p className="text-xs text-emerald-500 mt-1 flex items-center gap-1">
                   <ArrowUpRight className="h-3 w-3" /> Target: 1M
                 </p>
@@ -90,7 +109,7 @@ export default function Dashboard() {
                 <Eye className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold">3.4M</div>
+                <div className="text-3xl font-bold" data-testid="text-impressions-delivered">3.4M</div>
                 <p className="text-xs text-muted-foreground mt-1">Across 12 screens</p>
               </CardContent>
             </Card>
@@ -103,7 +122,7 @@ export default function Dashboard() {
                 <MonitorPlay className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold">{occupancyRate}%</div>
+                <div className="text-3xl font-bold" data-testid="text-occupancy-rate">{occupancyRate}%</div>
                 <p className="text-xs text-emerald-500 mt-1 flex items-center gap-1">
                   <ArrowUpRight className="h-3 w-3" /> +4% from last month
                 </p>
@@ -117,7 +136,7 @@ export default function Dashboard() {
                   <Building2 className="h-4 w-4 text-primary" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl font-bold">R 1.26M</div>
+                  <div className="text-3xl font-bold" data-testid="text-monthly-revenue">R 1.26M</div>
                   <p className="text-xs text-muted-foreground mt-1">
                     Potential (100%): R 1.85M
                   </p>
@@ -131,7 +150,7 @@ export default function Dashboard() {
                 <Building2 className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold">{isMallPartner ? accessibleAssets.length : allowedMalls.length}</div>
+                <div className="text-3xl font-bold" data-testid="text-total-count">{isMallPartner ? accessibleAssets.length : allowedMalls.length}</div>
                 <p className="text-xs text-muted-foreground mt-1">{isMallPartner ? "In your property" : "Across South Africa"}</p>
               </CardContent>
             </Card>
@@ -142,10 +161,10 @@ export default function Dashboard() {
                 <Users className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold">
+                <div className="text-3xl font-bold" data-testid="text-monthly-footfall">
                   {isMallPartner 
-                    ? (allowedMalls[0]?.footfall / 1000).toFixed(0) + 'k'
-                    : (portfolioStats.totalFootfall / 1000000).toFixed(1) + 'M'
+                    ? ((allowedMalls[0]?.footfall || 0) / 1000).toFixed(0) + 'k'
+                    : ((stats?.totalFootfall || 0) / 1000000).toFixed(1) + 'M'
                   }
                 </div>
                 <p className="text-xs text-emerald-500 mt-1 flex items-center gap-1">
@@ -158,7 +177,6 @@ export default function Dashboard() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-3">
-        {/* Map View */}
         <div className="col-span-2">
           {!isAdvertiser && <MallMap />}
           {isAdvertiser && (
@@ -172,7 +190,6 @@ export default function Dashboard() {
           )}
         </div>
 
-        {/* Underperforming Assets - Only for Admin/Internal */}
         {(user.role === "admin" || user.role === "internal") && (
           <Card className="border-border/50 border-destructive/20 bg-destructive/5 col-span-1">
             <CardHeader>
@@ -220,7 +237,6 @@ export default function Dashboard() {
           </Card>
         )}
 
-        {/* Campaign Snapshot for Advertisers */}
         {isAdvertiser && (
            <Card className="border-border/50 col-span-1">
             <CardHeader>
@@ -228,11 +244,11 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {userCampaigns.map(campaign => (
-                  <div key={campaign.id} className="p-4 bg-muted/30 rounded-lg border border-border/50">
+                {userCampaigns.map((campaign: any) => (
+                  <div key={campaign.id} className="p-4 bg-muted/30 rounded-lg border border-border/50" data-testid={`card-campaign-${campaign.id}`}>
                     <h4 className="font-medium">{campaign.name}</h4>
                     <div className="mt-2 text-xs text-muted-foreground flex justify-between">
-                      <span>Ends: {campaign.end_date}</span>
+                      <span>Ends: {campaign.endDate}</span>
                       <span className="text-primary font-medium">Active</span>
                     </div>
                   </div>
@@ -242,7 +258,6 @@ export default function Dashboard() {
           </Card>
         )}
 
-        {/* Mall Partner Snapshot */}
         {isMallPartner && (
            <Card className="border-border/50 col-span-1">
             <CardHeader>
@@ -271,7 +286,6 @@ export default function Dashboard() {
         )}
       </div>
 
-      {/* Charts Row */}
       <div className="grid gap-4 md:grid-cols-2">
         <Card className="border-border/50">
           <CardHeader>

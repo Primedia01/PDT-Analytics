@@ -1,10 +1,9 @@
 import { useEffect, useRef } from 'react';
-import { malls, assets } from '@/lib/mock-data';
+import { useMalls, useAssets } from '@/lib/api';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-// Fix for default marker icon
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -15,11 +14,17 @@ L.Icon.Default.mergeOptions({
 export function MallMap() {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstance = useRef<L.Map | null>(null);
+  const { data: malls } = useMalls();
+  const { data: allAssets } = useAssets();
 
   useEffect(() => {
-    if (!mapRef.current || mapInstance.current) return;
+    if (!mapRef.current || !malls || !allAssets) return;
 
-    // Initialize map
+    if (mapInstance.current) {
+      mapInstance.current.remove();
+      mapInstance.current = null;
+    }
+
     const map = L.map(mapRef.current).setView([-28.4793, 24.6727], 5);
     mapInstance.current = map;
 
@@ -27,10 +32,10 @@ export function MallMap() {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    malls.forEach(mall => {
-      const mallAssets = assets.filter(a => a.mall_id === mall.id);
+    malls.forEach((mall: any) => {
+      const mallAssets = allAssets.filter((a: any) => a.mallId === mall.id);
       const totalAssets = mallAssets.length;
-      const occupancy = Math.floor(Math.random() * 40) + 50; // Mock occupancy 50-90%
+      const occupancy = Math.floor(Math.random() * 40) + 50;
 
       const badgeColor = occupancy > 70 ? 'bg-primary text-primary-foreground' : 'bg-destructive text-destructive-foreground';
 
@@ -53,7 +58,7 @@ export function MallMap() {
         </div>
       `;
 
-      L.marker(mall.coordinates)
+      L.marker([mall.lat, mall.lng])
         .addTo(map)
         .bindPopup(popupContent, {
           className: 'custom-popup'
@@ -66,7 +71,7 @@ export function MallMap() {
         mapInstance.current = null;
       }
     };
-  }, []);
+  }, [malls, allAssets]);
 
   return (
     <Card className="border-border/50 col-span-full h-[500px] flex flex-col">

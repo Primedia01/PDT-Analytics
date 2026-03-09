@@ -1,0 +1,282 @@
+You are helping improve an existing web application called RetailTwin, a digital twin analytics platform for shopping malls and retail media assets.
+
+The platform already has:
+
+Dashboard
+
+Mall Explorer
+
+Portfolio Analytics
+
+Assets
+
+It currently visualizes 27 malls and ~300 advertising assets.
+
+Your task is to extend the platform with new analytics, campaign planning tools, and AI insights.
+
+Use a modern analytics dashboard design consistent with the existing UI.
+
+1. Add Inventory Occupancy Metrics
+
+Add a new KPI card to the Dashboard Overview.
+
+New Metric
+Inventory Occupancy
+71%
+↑ +4% from last month
+Calculation
+Occupancy Rate =
+(Sold inventory / Total inventory) * 100
+
+Display the trend indicator:
+
+Green if occupancy increased
+
+Red if decreased
+
+2. Add Revenue Potential Metrics
+
+Add another KPI card.
+
+Potential Monthly Revenue
+Potential Monthly Revenue
+R1.26M
+
+Add secondary line:
+
+If 100% inventory sold:
+R1.85M
+
+This should dynamically calculate based on:
+
+CPM
+Impressions
+Inventory availability
+3. Underperforming Assets Panel
+
+Create a new analytics card called:
+
+Underperforming Assets
+
+Example list:
+
+Escalator Panel 14
+Sandton City
+Occupancy: 32%
+
+Lightbox 22
+Canal Walk
+Low dwell time
+
+Logic:
+
+Assets are underperforming if:
+
+Occupancy < 40%
+OR
+Impressions below portfolio average
+
+Add warning icon.
+
+4. South Africa Mall Distribution Map
+
+Add a new section:
+
+Mall Distribution
+
+Show a map of South Africa with mall locations.
+
+Each marker should show:
+
+Mall name
+City
+Number of assets
+Occupancy rate
+
+Example:
+
+Sandton City
+Johannesburg
+Assets: 8
+Occupancy: 71%
+
+Use:
+
+Mapbox
+
+Leaflet
+
+or Google Maps API
+
+5. Campaign Simulator
+
+Create a new tool called:
+
+Plan Campaign
+
+Input fields:
+
+Brand: Adidas
+Target Audience: 18–35
+City: Johannesburg
+Campaign Duration: 2 weeks
+Budget: optional
+
+Output:
+
+Recommended Assets
+
+Sandton City Escalators
+Mall of Africa Entrance Screens
+Rosebank Mall Atrium
+
+Estimated Impressions
+8.7M
+
+Estimated Shopper Reach
+3.4M
+
+The system should rank assets by:
+
+footfall
+dwell time
+visibility
+historical performance
+6. Improve Mall Explorer
+
+Upgrade the Mall Explorer Digital Twin.
+
+It should show:
+
+Floorplan
+
+Replace placeholder cubes with:
+
+mall floor layout
+Asset Locations
+
+Display icons:
+
+Screen
+Escalator Panel
+Lightbox
+Billboard
+
+Color coded.
+
+Footfall Heatmaps
+
+Overlay a heatmap layer showing:
+
+high traffic zones
+medium traffic
+low traffic
+
+Use color gradient:
+
+red = high
+yellow = medium
+blue = low
+7. Add AI Insights Panel
+
+Create a new component called:
+
+AI Insights
+
+Example output:
+
+AI Insight
+
+Escalator panels generate
+23% more impressions than
+corridor lightboxes.
+
+Recommendation:
+Increase escalator inventory in high-footfall malls.
+
+Other insight examples:
+
+Mall of Africa delivers
+18% higher shopper dwell time.
+
+Rosebank Mall lightboxes
+have low engagement.
+
+Insights should be generated based on:
+
+impressions
+footfall
+asset performance
+8. Platform Architecture
+
+Structure the platform into 3 layers.
+
+Layer 1
+
+Portfolio Analytics
+
+KPIs
+Asset performance
+Occupancy
+Revenue potential
+Layer 2
+
+Digital Twin Visualization
+
+Mall Explorer
+3D assets
+footfall heatmaps
+Layer 3
+
+AI Insights
+
+performance insights
+campaign recommendations
+asset optimization
+9. Design Requirements
+
+Maintain the current UI style:
+
+dark dashboard
+
+analytics cards
+
+modern charts
+
+Libraries allowed:
+
+React
+Three.js
+Chart.js
+Mapbox
+Tailwind
+
+Ensure performance is optimized for large mall portfolios.
+
+10. Final Goal
+
+Turn RetailTwin into a Retail Media Intelligence Platform capable of:
+
+portfolio analytics
+digital twin visualization
+campaign planning
+AI insights
+
+This platform should help advertisers plan campaigns across shopping malls and help operators optimize media inventory performance.
+
+Bonus (Optional Advanced Feature)
+
+Add an Opportunity Detection Engine.
+
+Example output:
+
+Opportunity Detected
+
+Zone:
+Mall of Africa Food Court
+
+High dwell time
+No advertising asset present
+
+Potential revenue:
+R95k/month

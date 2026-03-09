@@ -9,6 +9,7 @@ import Dashboard from "@/pages/Dashboard";
 import Explorer from "@/pages/Explorer";
 import Analytics from "@/pages/Analytics";
 import Assets from "@/pages/Assets";
+import Campaign from "@/pages/Campaign";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
         <Route path="/explorer" component={Explorer}/>
         <Route path="/analytics" component={Analytics}/>
         <Route path="/assets" component={Assets}/>
+        <Route path="/campaign" component={Campaign}/>
         {/* Fallback to 404 */}
         <Route component={NotFound} />
       </Switch>

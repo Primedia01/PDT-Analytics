@@ -7,6 +7,7 @@ export type Mall = {
   size_sq_m: number;
   floors: number;
   footfall: number;
+  coordinates: [number, number]; // [lat, lng]
 };
 
 export type AssetType = "Digital Billboard" | "Screen" | "Lightbox" | "Elevator Wrap" | "Escalator Panel";
@@ -36,33 +37,33 @@ export type AnalyticsPoint = {
 
 // Generate 27 South African Malls
 const southAfricanMalls = [
-  { city: "Johannesburg", name: "Sandton City" },
-  { city: "Cape Town", name: "Mall of Africa" },
-  { city: "Durban", name: "V&A Waterfront" },
-  { city: "Pretoria", name: "Menlyn Park" },
-  { city: "Durban", name: "Gateway Theatre of Shopping" },
-  { city: "Johannesburg", name: "Rosebank Mall" },
-  { city: "Cape Town", name: "Canal Walk" },
-  { city: "Pretoria", name: "Brooklyn Mall" },
-  { city: "Johannesburg", name: "Eastgate Shopping Centre" },
-  { city: "Cape Town", name: "Cavendish Square" },
-  { city: "Durban", name: "Pavilion Shopping Centre" },
-  { city: "Johannesburg", name: "Cresta Shopping Centre" },
-  { city: "Pretoria", name: "Centurion Mall" },
-  { city: "Port Elizabeth", name: "Greenacres Shopping Centre" },
-  { city: "Bloemfontein", name: "Walmer Park Shopping Centre" },
-  { city: "East London", name: "Somerset Mall" },
-  { city: "Nelspruit", name: "Hemingways Mall" },
-  { city: "Kimberley", name: "Ilanga Mall" },
-  { city: "Polokwane", name: "Riverside Mall" },
-  { city: "Pietermaritzburg", name: "Liberty Promenade" },
-  { city: "George", name: "Mimosa Mall" },
-  { city: "Rustenburg", name: "Loch Logan Waterfront" },
-  { city: "Upington", name: "Waterfall Mall" },
-  { city: "Potchefstroom", name: "Greenstone Shopping Centre" },
-  { city: "Klerksdorp", name: "Clearwater Mall" },
-  { city: "Welkom", name: "Fourways Mall" },
-  { city: "Middelburg", name: "Maponya Mall" }
+  { city: "Johannesburg", name: "Sandton City", coordinates: [-26.1075, 28.0567] as [number, number] },
+  { city: "Cape Town", name: "Mall of Africa", coordinates: [-26.0159, 28.1065] as [number, number] },
+  { city: "Durban", name: "V&A Waterfront", coordinates: [-33.9036, 18.4205] as [number, number] },
+  { city: "Pretoria", name: "Menlyn Park", coordinates: [-25.7824, 28.2754] as [number, number] },
+  { city: "Durban", name: "Gateway Theatre of Shopping", coordinates: [-29.7262, 31.0664] as [number, number] },
+  { city: "Johannesburg", name: "Rosebank Mall", coordinates: [-26.1451, 28.0406] as [number, number] },
+  { city: "Cape Town", name: "Canal Walk", coordinates: [-33.8931, 18.5133] as [number, number] },
+  { city: "Pretoria", name: "Brooklyn Mall", coordinates: [-25.7719, 28.2343] as [number, number] },
+  { city: "Johannesburg", name: "Eastgate Shopping Centre", coordinates: [-26.1788, 28.1158] as [number, number] },
+  { city: "Cape Town", name: "Cavendish Square", coordinates: [-33.9788, 18.4651] as [number, number] },
+  { city: "Durban", name: "Pavilion Shopping Centre", coordinates: [-29.8492, 30.9348] as [number, number] },
+  { city: "Johannesburg", name: "Cresta Shopping Centre", coordinates: [-26.1287, 27.9733] as [number, number] },
+  { city: "Pretoria", name: "Centurion Mall", coordinates: [-25.8587, 28.1873] as [number, number] },
+  { city: "Port Elizabeth", name: "Greenacres Shopping Centre", coordinates: [-33.9482, 25.5765] as [number, number] },
+  { city: "Bloemfontein", name: "Walmer Park Shopping Centre", coordinates: [-33.9772, 25.5802] as [number, number] },
+  { city: "East London", name: "Somerset Mall", coordinates: [-34.0818, 18.8229] as [number, number] },
+  { city: "Nelspruit", name: "Hemingways Mall", coordinates: [-32.9691, 27.9015] as [number, number] },
+  { city: "Kimberley", name: "Ilanga Mall", coordinates: [-25.4674, 30.9575] as [number, number] },
+  { city: "Polokwane", name: "Riverside Mall", coordinates: [-25.4385, 30.9682] as [number, number] },
+  { city: "Pietermaritzburg", name: "Liberty Promenade", coordinates: [-34.0487, 18.6186] as [number, number] },
+  { city: "George", name: "Mimosa Mall", coordinates: [-29.1084, 26.2052] as [number, number] },
+  { city: "Rustenburg", name: "Loch Logan Waterfront", coordinates: [-29.1152, 26.2115] as [number, number] },
+  { city: "Upington", name: "Waterfall Mall", coordinates: [-25.6881, 27.2642] as [number, number] },
+  { city: "Potchefstroom", name: "Greenstone Shopping Centre", coordinates: [-26.1187, 28.1407] as [number, number] },
+  { city: "Klerksdorp", name: "Clearwater Mall", coordinates: [-26.1274, 27.9042] as [number, number] },
+  { city: "Welkom", name: "Fourways Mall", coordinates: [-26.0175, 28.0051] as [number, number] },
+  { city: "Middelburg", name: "Maponya Mall", coordinates: [-26.2584, 27.9002] as [number, number] }
 ];
 
 export const malls: Mall[] = southAfricanMalls.map((m, i) => ({
@@ -72,6 +73,7 @@ export const malls: Mall[] = southAfricanMalls.map((m, i) => ({
   size_sq_m: Math.floor(Math.random() * 80000) + 30000,
   floors: Math.floor(Math.random() * 4) + 1,
   footfall: Math.floor(Math.random() * 800000) + 150000,
+  coordinates: m.coordinates
 }));
 
 // Generate 300 Assets spread across malls

@@ -1,11 +1,17 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { portfolioStats, portfolioData, malls, assets } from "@/lib/mock-data";
-import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
-import { Building2, Eye, Users, MonitorPlay, ArrowUpRight } from "lucide-react";
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
+import { Building2, Eye, Users, MonitorPlay, ArrowUpRight, ArrowDownRight, AlertTriangle } from "lucide-react";
+import { MallMap } from "@/components/MallMap";
 
 export default function Dashboard() {
   const topMalls = [...malls].sort((a, b) => b.footfall - a.footfall).slice(0, 5);
   const topAssets = [...assets].sort((a, b) => b.weekly_impressions - a.weekly_impressions).slice(0, 5);
+
+  // Calculate mock occupancy
+  const totalInventory = assets.length;
+  const soldInventory = Math.floor(totalInventory * 0.71); // 71%
+  const occupancyRate = Math.round((soldInventory / totalInventory) * 100);
 
   return (
     <div className="p-8 space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -15,26 +21,41 @@ export default function Dashboard() {
       </div>
 
       {/* KPI Cards */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
         <Card className="bg-card hover-elevate border-border/50 transition-all">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Est. Monthly Value</CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground">Inventory Occupancy</CardTitle>
+            <MonitorPlay className="h-4 w-4 text-primary" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-3xl font-bold">{occupancyRate}%</div>
+            <p className="text-xs text-emerald-500 mt-1 flex items-center gap-1">
+              <ArrowUpRight className="h-3 w-3" /> +4% from last month
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-card hover-elevate border-border/50 transition-all">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground">Monthly Revenue</CardTitle>
             <Building2 className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold">R {(portfolioStats.totalImpressions * 0.05 / 1000).toFixed(1)}k</div>
-            <p className="text-xs text-muted-foreground mt-1">Based on CPM</p>
+            <div className="text-3xl font-bold">R 1.26M</div>
+            <p className="text-xs text-muted-foreground mt-1">
+              Potential (100%): R 1.85M
+            </p>
           </CardContent>
         </Card>
         
         <Card className="bg-card hover-elevate border-border/50 transition-all">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Total Assets</CardTitle>
-            <MonitorPlay className="h-4 w-4 text-primary" />
+            <CardTitle className="text-sm font-medium text-muted-foreground">Total Malls</CardTitle>
+            <Building2 className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold">{portfolioStats.totalAssets}</div>
-            <p className="text-xs text-muted-foreground mt-1">Active screens & billboards</p>
+            <div className="text-3xl font-bold">{portfolioStats.totalMalls}</div>
+            <p className="text-xs text-muted-foreground mt-1">Across South Africa</p>
           </CardContent>
         </Card>
 
@@ -65,6 +86,59 @@ export default function Dashboard() {
             <p className="text-xs text-emerald-500 mt-1 flex items-center gap-1">
               <ArrowUpRight className="h-3 w-3" /> +4.2% from last month
             </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-3">
+        {/* Map View */}
+        <div className="col-span-2">
+          <MallMap />
+        </div>
+
+        {/* Underperforming Assets */}
+        <Card className="border-border/50 border-destructive/20 bg-destructive/5 col-span-1">
+          <CardHeader>
+            <CardTitle className="text-lg flex items-center gap-2 text-destructive">
+              <AlertTriangle className="h-5 w-5" />
+              Underperforming Assets
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="p-3 bg-background rounded-lg border border-border/50">
+                <div className="flex justify-between items-start mb-1">
+                  <span className="font-semibold text-sm">Escalator Panel 14</span>
+                  <span className="text-xs text-destructive font-bold">32% Occ.</span>
+                </div>
+                <p className="text-xs text-muted-foreground">Sandton City</p>
+                <div className="mt-2 text-xs bg-destructive/10 text-destructive px-2 py-1 rounded inline-block">
+                  Occupancy &lt; 40%
+                </div>
+              </div>
+
+              <div className="p-3 bg-background rounded-lg border border-border/50">
+                <div className="flex justify-between items-start mb-1">
+                  <span className="font-semibold text-sm">Lightbox 22</span>
+                  <span className="text-xs text-destructive font-bold">Low Dwell</span>
+                </div>
+                <p className="text-xs text-muted-foreground">Canal Walk</p>
+                <div className="mt-2 text-xs bg-destructive/10 text-destructive px-2 py-1 rounded inline-block">
+                  Impressions below avg
+                </div>
+              </div>
+              
+              <div className="p-3 bg-background rounded-lg border border-border/50">
+                <div className="flex justify-between items-start mb-1">
+                  <span className="font-semibold text-sm">Digital Billboard 05</span>
+                  <span className="text-xs text-destructive font-bold">Offline</span>
+                </div>
+                <p className="text-xs text-muted-foreground">Menlyn Park</p>
+                <div className="mt-2 text-xs bg-destructive/10 text-destructive px-2 py-1 rounded inline-block">
+                  Hardware fault detected
+                </div>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </div>
@@ -118,55 +192,6 @@ export default function Dashboard() {
         </Card>
       </div>
 
-      {/* Tables Row */}
-      <div className="grid gap-4 md:grid-cols-2">
-        <Card className="border-border/50">
-          <CardHeader>
-            <CardTitle className="text-lg">Top Performing Malls</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {topMalls.map((mall, i) => (
-                <div key={mall.id} className="flex items-center justify-between border-b border-border/50 pb-4 last:border-0 last:pb-0">
-                  <div>
-                    <p className="font-medium">{mall.name}</p>
-                    <p className="text-xs text-muted-foreground">{mall.city}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-bold">{(mall.footfall / 1000).toFixed(1)}k</p>
-                    <p className="text-xs text-muted-foreground">Footfall</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="border-border/50">
-          <CardHeader>
-            <CardTitle className="text-lg">Top Assets by Impressions</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {topAssets.map((asset, i) => (
-                <div key={asset.id} className="flex items-center justify-between border-b border-border/50 pb-4 last:border-0 last:pb-0">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-mono bg-muted px-2 py-0.5 rounded text-muted-foreground">{asset.id}</span>
-                      <p className="font-medium text-sm">{asset.asset_name}</p>
-                    </div>
-                    <p className="text-xs text-muted-foreground mt-1">{malls.find(m => m.id === asset.mall_id)?.name} - {asset.zone}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-bold text-primary">{(asset.weekly_impressions / 1000).toFixed(1)}k</p>
-                    <p className="text-xs text-muted-foreground">Weekly</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      </div>
     </div>
   );
 }

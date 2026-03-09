@@ -1,4 +1,4 @@
-import { LayoutDashboard, Building2, BarChart3, Settings, MapPin } from "lucide-react";
+import { LayoutDashboard, Building2, BarChart3, Settings, MapPin, Target } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 
@@ -7,6 +7,7 @@ const navigation = [
   { name: "Mall Explorer", href: "/explorer", icon: Building2 },
   { name: "Portfolio Analytics", href: "/analytics", icon: BarChart3 },
   { name: "Assets", href: "/assets", icon: MapPin },
+  { name: "Plan Campaign", href: "/campaign", icon: Target },
 ];
 
 export function Sidebar() {

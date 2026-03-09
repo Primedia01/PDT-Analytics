@@ -12,28 +12,46 @@ import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip } from "rec
 function MallModel() {
   return (
     <group>
-      {/* Floor */}
-      <mesh receiveShadow position={[0, -0.5, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[50, 50]} />
-        <meshStandardMaterial color="#1a1a1a" roughness={0.8} />
+      {/* Floorplan Layout representing mall corridors */}
+      <mesh receiveShadow position={[0, -0.49, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[60, 60]} />
+        <meshStandardMaterial color="#0f0f0f" roughness={0.9} />
       </mesh>
       
-      {/* Central Atrium Pillar */}
-      <mesh castShadow receiveShadow position={[0, 2, 0]}>
-        <cylinderGeometry args={[2, 2, 5, 32]} />
-        <meshStandardMaterial color="#333" />
+      {/* High Traffic Heatmap Overlay (Red/Yellow) */}
+      <mesh receiveShadow position={[5, -0.48, 5]} rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[15, 20]} />
+        <meshBasicMaterial color="#ef4444" opacity={0.15} transparent depthWrite={false} />
+      </mesh>
+      
+      {/* Medium Traffic Heatmap Overlay */}
+      <mesh receiveShadow position={[-10, -0.48, -5]} rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[25, 10]} />
+        <meshBasicMaterial color="#eab308" opacity={0.15} transparent depthWrite={false} />
       </mesh>
 
-      {/* Some abstract store blocks */}
-      {[...Array(12)].map((_, i) => {
-        const angle = (i / 12) * Math.PI * 2;
-        const radius = 15;
+      {/* Low Traffic Heatmap Overlay */}
+      <mesh receiveShadow position={[15, -0.48, -15]} rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[15, 15]} />
+        <meshBasicMaterial color="#3b82f6" opacity={0.1} transparent depthWrite={false} />
+      </mesh>
+      
+      {/* Central Atrium */}
+      <mesh castShadow receiveShadow position={[0, 0.5, 0]}>
+        <cylinderGeometry args={[4, 4, 1, 32]} />
+        <meshStandardMaterial color="#222" />
+      </mesh>
+
+      {/* Store Layout Blocks */}
+      {[...Array(16)].map((_, i) => {
+        const angle = (i / 16) * Math.PI * 2;
+        const radius = 20;
         const x = Math.cos(angle) * radius;
         const z = Math.sin(angle) * radius;
         return (
-          <mesh key={i} castShadow receiveShadow position={[x, 1.5, z]}>
-            <boxGeometry args={[4, 4, 4]} />
-            <meshStandardMaterial color="#222" roughness={0.5} />
+          <mesh key={i} castShadow receiveShadow position={[x, 2, z]}>
+            <boxGeometry args={[6, 4, 6]} />
+            <meshStandardMaterial color="#1a1a1a" roughness={0.5} />
           </mesh>
         );
       })}
@@ -42,14 +60,21 @@ function MallModel() {
 }
 
 function AssetMarker({ asset, onClick, isSelected }: { asset: Asset, onClick: () => void, isSelected: boolean }) {
+  let color = "hsl(var(--accent))";
+  if (asset.asset_type === "Screen") color = "#3b82f6"; // blue
+  if (asset.asset_type === "Escalator Panel") color = "#f59e0b"; // yellow
+  if (asset.asset_type === "Digital Billboard") color = "#8b5cf6"; // purple
+  if (asset.asset_type === "Elevator Wrap") color = "#ec4899"; // pink
+  if (isSelected) color = "hsl(var(--primary))";
+
   return (
     <group position={asset.position}>
       <mesh onClick={(e) => { e.stopPropagation(); onClick(); }}>
-        <sphereGeometry args={[isSelected ? 0.6 : 0.4, 32, 32]} />
+        <boxGeometry args={[isSelected ? 0.8 : 0.6, isSelected ? 1.6 : 1.2, 0.2]} />
         <meshStandardMaterial 
-          color={isSelected ? "hsl(var(--primary))" : "hsl(var(--accent))"} 
-          emissive={isSelected ? "hsl(var(--primary))" : "hsl(var(--accent))"}
-          emissiveIntensity={isSelected ? 1 : 0.5}
+          color={color} 
+          emissive={color}
+          emissiveIntensity={isSelected ? 0.8 : 0.4}
         />
       </mesh>
       {isSelected && (

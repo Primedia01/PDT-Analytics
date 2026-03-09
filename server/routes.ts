@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertCampaignSchema } from "@shared/schema";
+import { insertAssetSchema, insertCampaignSchema } from "@shared/schema";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -44,6 +44,49 @@ export async function registerRoutes(
     if (req.query.type) filters.type = req.query.type as string;
     const assetList = await storage.getAssets(filters);
     res.json(assetList);
+  });
+
+  app.post("/api/assets", async (req, res) => {
+    const parsed = insertAssetSchema.safeParse(req.body);
+    if (!parsed.success) {
+      return res.status(400).json({ message: "Invalid asset data", errors: parsed.error.issues });
+    }
+    const asset = await storage.createAsset(parsed.data);
+    res.status(201).json(asset);
+  });
+
+  app.post("/api/assets/bulk", async (req, res) => {
+    const { assets: assetRows } = req.body;
+    if (!Array.isArray(assetRows) || assetRows.length === 0) {
+      return res.status(400).json({ message: "Request body must contain a non-empty 'assets' array" });
+    }
+    const results: { created: number; errors: { row: number; message: string }[] } = { created: 0, errors: [] };
+    const validAssets: any[] = [];
+
+    for (let i = 0; i < assetRows.length; i++) {
+      const parsed = insertAssetSchema.safeParse(assetRows[i]);
+      if (!parsed.success) {
+        results.errors.push({ row: i + 1, message: parsed.error.issues.map(e => `${e.path.join(".")}: ${e.message}`).join("; ") });
+      } else {
+        validAssets.push(parsed.data);
+      }
+    }
+
+    if (validAssets.length > 0) {
+      try {
+        await storage.bulkCreateAssets(validAssets);
+        results.created = validAssets.length;
+      } catch (err: any) {
+        const msg = err?.message || "Database error during bulk insert";
+        if (msg.includes("duplicate key")) {
+          results.errors.push({ row: 0, message: "One or more asset IDs already exist. Use unique IDs." });
+        } else {
+          results.errors.push({ row: 0, message: msg });
+        }
+      }
+    }
+
+    res.status(results.errors.length > 0 && results.created === 0 ? 400 : results.errors.length > 0 ? 207 : 201).json(results);
   });
 
   app.get("/api/assets/:id", async (req, res) => {

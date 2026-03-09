@@ -34,6 +34,8 @@ Retail Media Operating System — a full-stack analytics platform for a portfoli
 - `GET /api/users` — All users (passwords excluded)
 - `GET /api/malls` — All 27 malls
 - `GET /api/assets?mallId=&tenantId=&type=` — Assets with optional filters
+- `POST /api/assets` — Create a single asset
+- `POST /api/assets/bulk` — Bulk import assets (body: `{ assets: [...] }`, returns `{ created, errors }`)
 - `GET /api/campaigns?tenantId=` — Campaigns, optionally filtered by tenant
 - `POST /api/campaigns` — Create a new campaign
 - `GET /api/analytics?days=` — Time-series analytics data
@@ -44,7 +46,7 @@ Retail Media Operating System — a full-stack analytics platform for a portfoli
 - `/` — Dashboard (Portfolio/Campaign/Mall views based on role)
 - `/explorer` — 3D Mall Explorer with digital twin, heatmap overlay, asset analytics panel
 - `/analytics` — Portfolio Analytics (admin/internal only) with AI Insights
-- `/assets` — Asset Inventory table with search/filter
+- `/assets` — Asset Inventory with search/filter, Add Asset form, CSV bulk import
 - `/marketplace` — Programmatic Media Marketplace with dynamic pricing
 - `/campaign` — Campaign Builder with AI optimizer and 2-step booking flow
 

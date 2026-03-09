@@ -27,6 +27,7 @@ export interface IStorage {
   getAssets(filters?: { mallId?: string; tenantId?: string; type?: string }): Promise<Asset[]>;
   getAsset(id: string): Promise<Asset | undefined>;
   createAsset(asset: InsertAsset): Promise<Asset>;
+  bulkCreateAssets(assetList: InsertAsset[]): Promise<Asset[]>;
 
   getCampaigns(tenantId?: string): Promise<Campaign[]>;
   getCampaign(id: string): Promise<Campaign | undefined>;
@@ -122,6 +123,11 @@ export class DatabaseStorage implements IStorage {
   async createAsset(asset: InsertAsset): Promise<Asset> {
     const [created] = await db.insert(assets).values(asset).returning();
     return created;
+  }
+
+  async bulkCreateAssets(assetList: InsertAsset[]): Promise<Asset[]> {
+    if (assetList.length === 0) return [];
+    return db.insert(assets).values(assetList).returning();
   }
 
   async getCampaigns(tenantId?: string): Promise<Campaign[]> {

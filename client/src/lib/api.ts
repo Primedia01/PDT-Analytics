@@ -61,3 +61,27 @@ export function useCreateCampaign() {
     },
   });
 }
+
+export function useCreateAsset() {
+  return useMutation({
+    mutationFn: async (data: any) => {
+      const res = await apiRequest("POST", "/api/assets", data);
+      return res.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/assets"] });
+    },
+  });
+}
+
+export function useBulkCreateAssets() {
+  return useMutation({
+    mutationFn: async (assetRows: any[]) => {
+      const res = await apiRequest("POST", "/api/assets/bulk", { assets: assetRows });
+      return res.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/assets"] });
+    },
+  });
+}

@@ -102,28 +102,8 @@ export default function Analytics() {
         </Card>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3">
-        <div className="col-span-2">
-          <Card className="border-border/50 h-full">
-            <CardHeader>
-              <CardTitle className="text-lg">Engagement Heatmap Simulator</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="h-64 rounded-md border border-border/50 bg-muted/20 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-                <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/20 blur-3xl rounded-full"></div>
-                <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-accent/20 blur-3xl rounded-full"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-chart-3/20 blur-3xl rounded-full"></div>
-                
-                <p className="text-muted-foreground z-10 font-medium">Select a mall in the Explorer to view actual spatial heatmaps</p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-        
-        <div className="col-span-1">
-          <AIInsights />
-        </div>
+      <div className="grid gap-4">
+        <AIInsights />
       </div>
     </div>
   );

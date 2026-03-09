@@ -11,7 +11,7 @@ import { useLocation } from "wouter";
 import { useAuth } from "@/lib/auth";
 
 // Simple 3D Mall Representation (Floor plane + some blocks)
-function MallModel() {
+function MallModel({ showHeatmap }: { showHeatmap: boolean }) {
   return (
     <group>
       {/* Floorplan Layout representing mall corridors */}
@@ -20,23 +20,27 @@ function MallModel() {
         <meshStandardMaterial color="#0f0f0f" roughness={0.9} />
       </mesh>
       
-      {/* High Traffic Heatmap Overlay (Red/Yellow) */}
-      <mesh receiveShadow position={[5, -0.48, 5]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[15, 20]} />
-        <meshBasicMaterial color="#ef4444" opacity={0.15} transparent depthWrite={false} />
-      </mesh>
-      
-      {/* Medium Traffic Heatmap Overlay */}
-      <mesh receiveShadow position={[-10, -0.48, -5]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[25, 10]} />
-        <meshBasicMaterial color="#eab308" opacity={0.15} transparent depthWrite={false} />
-      </mesh>
+      {showHeatmap && (
+        <group>
+          {/* High Traffic Heatmap Overlay (Red/Yellow) */}
+          <mesh receiveShadow position={[5, -0.48, 5]} rotation={[-Math.PI / 2, 0, 0]}>
+            <planeGeometry args={[15, 20]} />
+            <meshBasicMaterial color="#ef4444" opacity={0.15} transparent depthWrite={false} />
+          </mesh>
+          
+          {/* Medium Traffic Heatmap Overlay */}
+          <mesh receiveShadow position={[-10, -0.48, -5]} rotation={[-Math.PI / 2, 0, 0]}>
+            <planeGeometry args={[25, 10]} />
+            <meshBasicMaterial color="#eab308" opacity={0.15} transparent depthWrite={false} />
+          </mesh>
 
-      {/* Low Traffic Heatmap Overlay */}
-      <mesh receiveShadow position={[15, -0.48, -15]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[15, 15]} />
-        <meshBasicMaterial color="#3b82f6" opacity={0.1} transparent depthWrite={false} />
-      </mesh>
+          {/* Low Traffic Heatmap Overlay */}
+          <mesh receiveShadow position={[15, -0.48, -15]} rotation={[-Math.PI / 2, 0, 0]}>
+            <planeGeometry args={[15, 15]} />
+            <meshBasicMaterial color="#3b82f6" opacity={0.1} transparent depthWrite={false} />
+          </mesh>
+        </group>
+      )}
       
       {/* Central Atrium */}
       <mesh castShadow receiveShadow position={[0, 0.5, 0]}>
@@ -119,6 +123,7 @@ export default function Explorer() {
   const [selectedMallId, setSelectedMallId] = useState<string>(allowedMalls[0]?.id || malls[0].id);
   const [selectedAsset, setSelectedAsset] = useState<Asset | null>(null);
   const [showOpportunity, setShowOpportunity] = useState(false);
+  const [showHeatmap, setShowHeatmap] = useState(false);
 
   useEffect(() => {
     // Check for query parameters manually
@@ -172,7 +177,7 @@ export default function Explorer() {
           <spotLight position={[10, 20, 10]} angle={0.3} penumbra={1} intensity={1} castShadow />
           <Environment preset="city" />
 
-          <MallModel />
+          <MallModel showHeatmap={showHeatmap} />
 
           {/* Only show AI Opportunity for internal/admin roles */}
           {showOpportunity && selectedMallId === 'MALL-1001' && (user.role === 'admin' || user.role === 'internal') && (
@@ -307,6 +312,32 @@ export default function Explorer() {
                     <Area type="monotone" dataKey="impressions" stroke="hsl(var(--primary))" strokeWidth={2} fillOpacity={1} fill="url(#colorHourly)" />
                   </AreaChart>
                 </ResponsiveContainer>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-border/50">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="font-semibold flex items-center gap-2">
+                  <Activity className="h-4 w-4 text-primary" />
+                  Spatial Engagement Heatmap
+                </h3>
+              </div>
+              <div className="space-y-4">
+                <p className="text-xs text-muted-foreground">Visualize shopper traffic patterns around this asset's zone.</p>
+                <div className="h-40 rounded-md border border-border/50 bg-muted/20 flex items-center justify-center relative overflow-hidden">
+                  {showHeatmap ? (
+                    <>
+                      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                      <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/30 blur-2xl rounded-full"></div>
+                      <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-accent/30 blur-xl rounded-full"></div>
+                      <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-chart-3/20 blur-2xl rounded-full"></div>
+                    </>
+                  ) : (
+                    <Button variant="outline" size="sm" onClick={() => setShowHeatmap(true)}>
+                      Generate Heatmap
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
 

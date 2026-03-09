@@ -11,33 +11,35 @@ import Explorer from "@/pages/Explorer";
 import Analytics from "@/pages/Analytics";
 import Assets from "@/pages/Assets";
 import Campaign from "@/pages/Campaign";
+import Marketplace from "@/pages/Marketplace";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
-    <Layout>
-      <Switch>
-        <Route path="/" component={Dashboard}/>
-        <Route path="/explorer" component={Explorer}/>
-        <Route path="/analytics" component={Analytics}/>
-        <Route path="/assets" component={Assets}/>
-        <Route path="/campaign" component={Campaign}/>
-        {/* Fallback to 404 */}
-        <Route component={NotFound} />
-      </Switch>
-    </Layout>
+    <AuthProvider>
+      <Layout>
+        <Switch>
+          <Route path="/" component={Dashboard}/>
+          <Route path="/explorer" component={Explorer}/>
+          <Route path="/analytics" component={Analytics}/>
+          <Route path="/assets" component={Assets}/>
+          <Route path="/campaign" component={Campaign}/>
+          <Route path="/marketplace" component={Marketplace}/>
+          {/* Fallback to 404 */}
+          <Route component={NotFound} />
+        </Switch>
+      </Layout>
+    </AuthProvider>
   );
 }
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </AuthProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Router />
+      </TooltipProvider>
     </QueryClientProvider>
   );
 }

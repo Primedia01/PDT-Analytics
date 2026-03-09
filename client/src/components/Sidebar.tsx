@@ -1,4 +1,4 @@
-import { LayoutDashboard, Building2, BarChart3, Settings, MapPin, Target, Users as UsersIcon, Shield, ChevronDown } from "lucide-react";
+import { LayoutDashboard, Building2, BarChart3, Settings, MapPin, Target, Users as UsersIcon, Shield, ChevronDown, Store } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { useAuth, Role } from "@/lib/auth";
@@ -16,6 +16,7 @@ export function Sidebar() {
           { name: "Mall Explorer", href: "/explorer", icon: Building2 },
           { name: "Portfolio Analytics", href: "/analytics", icon: BarChart3 },
           { name: "Assets", href: "/assets", icon: MapPin },
+          { name: "Media Marketplace", href: "/marketplace", icon: Store },
           { name: "Campaign Simulator", href: "/campaign", icon: Target },
           { name: "User Management", href: "#", icon: UsersIcon },
           { name: "Settings", href: "#", icon: Settings },
@@ -32,11 +33,13 @@ export function Sidebar() {
           { name: "Dashboard", href: "/", icon: LayoutDashboard },
           { name: "Mall Explorer", href: "/explorer", icon: Building2 },
           { name: "Campaign Simulator", href: "/campaign", icon: Target },
+          { name: "Media Marketplace", href: "/marketplace", icon: Store },
           { name: "Available Assets", href: "/assets", icon: MapPin },
         ];
       case "advertiser":
         return [
           { name: "Campaign Planner", href: "/campaign", icon: Target },
+          { name: "Media Marketplace", href: "/marketplace", icon: Store },
           { name: "My Campaigns", href: "#", icon: BarChart3 },
           { name: "Mall Explorer", href: "/explorer", icon: Building2 },
           { name: "Reports", href: "#", icon: LayoutDashboard },

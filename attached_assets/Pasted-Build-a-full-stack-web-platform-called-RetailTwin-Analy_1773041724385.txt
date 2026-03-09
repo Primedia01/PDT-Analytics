@@ -1,0 +1,409 @@
+Build a full-stack web platform called RetailTwin Analytics.
+
+The platform will allow users to visualize digital twins of shopping malls, overlay digital advertising assets, and display audience analytics around those assets across a portfolio of malls.
+
+The system must be scalable but initially built as an MVP supporting 27 shopping malls.
+
+Use modern, scalable technologies.
+
+Recommended stack:
+
+Frontend
+
+React
+
+Three.js (for 3D digital twins)
+
+TailwindCSS
+
+React Three Fiber
+
+Backend
+
+Node.js + Express
+
+REST API
+
+Database
+
+PostgreSQL
+
+Analytics
+
+Chart.js or Recharts
+
+Deployment
+
+Replit Deployments
+
+CORE PLATFORM FUNCTION
+
+The system should allow users to:
+
+View a portfolio dashboard
+
+Select a shopping mall
+
+Load the 3D digital twin of the mall
+
+See advertising assets placed in the mall
+
+Click an asset to see audience analytics
+
+See portfolio-level analytics across all malls
+
+PLATFORM STRUCTURE
+
+Create the following pages:
+
+1 Portfolio Dashboard
+
+Displays:
+
+Total malls in portfolio
+
+Total advertising assets
+
+Total impressions
+
+Total foot traffic
+
+Top performing assets
+
+Top performing malls
+
+Charts:
+
+Portfolio impressions trend
+
+Portfolio footfall trend
+
+Asset performance comparison
+
+2 Mall Explorer
+
+User selects a mall.
+
+Display:
+
+Interactive 3D mall model
+
+Mall navigation
+
+Advertising asset markers
+
+Each marker represents:
+
+Digital billboard
+
+Screen
+
+Lightbox
+
+Elevator wrap
+
+Escalator panel
+
+Clicking a marker opens:
+
+Asset analytics panel.
+
+3 Digital Twin Viewer
+
+Use Three.js to render mall models.
+
+Features:
+
+Orbit camera
+
+Zoom
+
+Asset pins
+
+Hover highlight
+
+Click interaction
+
+Each asset should display:
+
+Asset information:
+
+Asset ID
+
+Asset type
+
+Location inside mall
+
+Screen size
+
+Media format
+
+Analytics:
+
+Daily impressions
+
+Weekly impressions
+
+Audience dwell time
+
+Estimated reach
+
+Engagement score
+
+4 Asset Analytics Panel
+
+When an asset is clicked display:
+
+Charts:
+
+Impressions over time
+
+Audience density heatmap
+
+Hourly traffic
+
+Campaign performance
+
+Metrics:
+
+Total impressions
+
+Average dwell time
+
+Peak hour traffic
+
+Audience demographic estimate
+
+5 Portfolio Analytics
+
+This page shows performance across all malls.
+
+Include:
+
+Charts:
+
+Impressions by mall
+
+Foot traffic by mall
+
+Asset type performance
+
+Top 10 assets
+
+Filters:
+
+Mall
+
+Asset type
+
+Date range
+
+DIGITAL TWIN STRUCTURE
+
+Each mall will contain:
+
+Floors
+
+Corridors
+
+Store spaces
+
+Advertising assets
+
+Example structure:
+
+Mall
+Floor
+Zone
+Asset
+
+Assets should store:
+
+id
+mall_id
+floor
+zone
+asset_type
+coordinates
+impressions
+dwell_time
+engagement_score
+
+DATA MODEL
+
+Create PostgreSQL tables.
+
+malls
+
+id
+name
+city
+size_sq_m
+floors
+
+assets
+
+id
+mall_id
+asset_name
+asset_type
+floor
+zone
+x_coordinate
+y_coordinate
+z_coordinate
+
+analytics
+
+id
+asset_id
+date
+impressions
+dwell_time
+traffic_volume
+engagement_score
+
+3D MODEL HANDLING
+
+Allow uploading of mall models:
+
+Supported formats:
+
+glTF
+
+GLB
+
+FBX
+
+Each mall model loads into the viewer.
+
+Asset coordinates should align to the model.
+
+ANALYTICS VISUALIZATION
+
+Create:
+
+1 Trend Line
+Impressions over time
+
+2 Heatmap
+Audience density zones
+
+3 Comparison Chart
+Asset performance
+
+4 Portfolio Dashboard
+
+SAMPLE DATA
+
+Generate demo data for:
+
+27 malls
+
+300 assets
+
+12 months of analytics
+
+Simulate realistic values.
+
+UI DESIGN
+
+Design style:
+
+Modern analytics dashboard.
+
+Layout:
+
+Left sidebar navigation
+
+Sections:
+
+Dashboard
+Malls
+Portfolio Analytics
+Assets
+
+Use Tailwind.
+
+INTERACTIVE FEATURES
+
+Include:
+
+Hover over asset → highlight
+
+Click asset → open analytics panel
+
+Filter analytics by:
+
+Mall
+
+Date
+
+Asset type
+
+PERFORMANCE REQUIREMENTS
+
+Optimize:
+
+Lazy loading of 3D models
+
+Asset marker batching
+
+Efficient API calls
+
+FUTURE READY ARCHITECTURE
+
+Structure code so future integrations are possible:
+
+IoT sensors
+Live footfall counters
+Camera analytics
+Advertising campaign management
+
+MVP DELIVERABLE
+
+The MVP must allow:
+
+Portfolio view of 27 malls
+
+Interactive mall digital twins
+
+Advertising asset overlays
+
+Asset analytics
+
+Portfolio analytics dashboard
+
+EXTRA FEATURE
+
+Include audience heatmap overlay inside the 3D mall.
+
+Heatmap should show:
+
+high traffic areas
+
+medium traffic
+
+low traffic
+
+FINAL REQUIREMENT
+
+Provide:
+
+Full frontend code
+
+Full backend code
+
+Database schema
+
+Example mall model loader
+
+Mock analytics generator
+
+Platform Name
+
+RetailTwin Analytics
+
+Outcome
+
+A working MVP platform that allows users to explore shopping mall digital twins and analyze advertising performance across a full mall portfolio.

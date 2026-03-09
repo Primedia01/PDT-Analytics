@@ -1,5 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
+import express from "express";
+import path from "path";
 import { storage } from "./storage";
 import { insertCampaignSchema } from "@shared/schema";
 
@@ -7,6 +9,11 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+
+  app.use(express.static(path.resolve(import.meta.dirname, "static"), {
+    maxAge: "1d",
+    immutable: true,
+  }));
 
   app.get("/api/tenants", async (_req, res) => {
     const tenants = await storage.getTenants();

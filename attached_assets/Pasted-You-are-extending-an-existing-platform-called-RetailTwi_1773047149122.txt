@@ -1,0 +1,287 @@
+You are extending an existing platform called RetailTwin, a digital twin and analytics system for retail media assets in shopping malls.
+
+The platform currently includes:
+
+Dashboard (portfolio metrics)
+
+Mall Explorer (digital twin visualization)
+
+Portfolio Analytics
+
+Asset database
+
+The system manages:
+
+27 malls
+300 advertising assets
+monthly impressions
+footfall analytics
+
+Your task is to add AI Agents that continuously analyze the portfolio and generate insights automatically.
+
+These agents should run in the background and update the AI Insights Panel.
+
+Agent Architecture
+
+Create a RetailTwin AI Engine.
+
+RetailTwin Platform
+        │
+        ▼
+AI Engine
+        │
+ ├─ Asset Performance Agent
+ ├─ Opportunity Detection Agent
+ ├─ Campaign Optimization Agent
+ ├─ Portfolio Intelligence Agent
+ └─ Advertiser Planning Agent
+
+Agents should run on a schedule or when new data is loaded.
+
+1. Asset Performance Agent
+
+Purpose: detect underperforming assets.
+
+Analyze:
+
+impressions
+footfall
+occupancy
+engagement score
+
+Rules:
+
+Asset occupancy < 40%
+OR
+Impressions below portfolio average
+
+Output example:
+
+Alert: Underperforming Asset
+
+Escalator Panel 14
+Sandton City
+
+Occupancy: 32%
+Impressions below network average
+
+Recommendation:
+Relocate to high footfall corridor.
+
+Display alerts in AI Insights panel.
+
+2. Opportunity Detection Agent
+
+Purpose: find new advertising opportunities.
+
+Analyze:
+
+footfall heatmaps
+dwell time
+asset density
+
+Detect:
+
+High footfall zone
+No nearby advertising asset
+
+Output example:
+
+Opportunity Detected
+
+Location:
+Mall of Africa Food Court
+
+Footfall:
+32k daily shoppers
+
+Current assets:
+0
+
+Recommended asset:
+Digital screen
+
+Estimated revenue:
+R95k per month
+
+Show opportunities on the mall digital twin map.
+
+3. Campaign Optimization Agent
+
+Purpose: help advertisers plan better campaigns.
+
+Input:
+
+campaign duration
+target audience
+selected city
+budget
+
+Analyze:
+
+historical asset performance
+footfall patterns
+engagement scores
+
+Output example:
+
+Campaign Recommendation
+
+Brand: Adidas
+City: Johannesburg
+
+Best assets:
+
+Sandton City Escalators
+Mall of Africa Entrance Screens
+Rosebank Atrium
+
+Estimated impressions:
+8.7M
+
+Estimated reach:
+3.4M shoppers
+
+Display results in Campaign Simulator.
+
+4. Portfolio Intelligence Agent
+
+Purpose: generate executive insights.
+
+Analyze:
+
+portfolio impressions
+footfall trends
+asset distribution
+campaign performance
+
+Generate insights like:
+
+Portfolio Insight
+
+Escalator panels generate
+23% higher engagement
+than corridor lightboxes.
+
+Recommendation:
+Increase escalator inventory
+in high footfall malls.
+
+Show these insights in AI Insights Panel.
+
+5. Advertiser Planning Agent
+
+Purpose: identify advertiser opportunities.
+
+Analyze:
+
+footfall demographics
+mall audience profile
+asset visibility
+
+Output example:
+
+Advertiser Opportunity
+
+Category:
+Sportswear
+
+Best malls:
+Sandton City
+Mall of Africa
+
+Recommended advertiser:
+Nike or Adidas
+AI Insights Panel UI
+
+Add a panel called:
+
+AI Insights
+
+Display cards like:
+
+AI Insight
+
+Escalator panels generate
+23% more impressions
+than corridor lightboxes.
+
+Confidence: High
+
+Add icons:
+
+⚠ Underperforming asset
+
+💡 Opportunity
+
+📊 Portfolio insight
+
+📈 Campaign recommendation
+
+Integration with Digital Twin
+
+When an AI agent detects something:
+
+Highlight the location inside Mall Explorer.
+
+Example:
+
+Opportunity detected
+
+Mall of Africa
+Food Court Zone
+
+Flash marker on digital twin map.
+
+Data Flow
+
+Agents should read from:
+
+asset database
+impressions data
+footfall analytics
+campaign performance
+
+Use scheduled processing:
+
+Run agents every 24 hours
+Final Goal
+
+Transform RetailTwin into a Retail Media Intelligence Platform.
+
+Capabilities:
+
+portfolio analytics
+digital twin visualization
+AI optimization
+campaign planning
+advertiser insights
+
+The platform should help:
+
+media owners optimize assets
+advertisers plan campaigns
+executives monitor portfolio performance
+Optional Advanced Feature
+
+Add Predictive Revenue Agent.
+
+Example output:
+
+Revenue Forecast
+
+Sandton City Screens
+
+Projected growth:
++18% next quarter
+
+Suggested price increase:
++10%
+Result
+
+RetailTwin becomes an AI-powered mall media operating system capable of automatically:
+
+detecting underperforming assets
+identifying new advertising opportunities
+optimizing campaigns
+generating executive insights

@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Html, Environment, ContactShadows } from "@react-three/drei";
 import { malls, assets, Asset } from "@/lib/mock-data";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { X, Activity, Users, Clock, MonitorPlay, BarChart2 } from "lucide-react";
+import { X, Activity, Users, Clock, MonitorPlay, BarChart2, Lightbulb } from "lucide-react";
 import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
+import { useLocation } from "wouter";
 
 // Simple 3D Mall Representation (Floor plane + some blocks)
 function MallModel() {
@@ -89,9 +90,42 @@ function AssetMarker({ asset, onClick, isSelected }: { asset: Asset, onClick: ()
   );
 }
 
+function OpportunityMarker() {
+  return (
+    <group position={[6, 0.5, 6]}>
+      <mesh>
+        <cylinderGeometry args={[1.5, 1.5, 0.1, 32]} />
+        <meshBasicMaterial color="#10b981" opacity={0.4} transparent />
+      </mesh>
+      <Html position={[0, 1.5, 0]} center zIndexRange={[100, 0]}>
+        <div className="bg-emerald-500/20 backdrop-blur-md text-emerald-500 border border-emerald-500 px-3 py-1.5 rounded-md shadow-[0_0_15px_rgba(16,185,129,0.5)] text-sm whitespace-nowrap animate-pulse flex items-center gap-2">
+          <Lightbulb className="h-4 w-4" />
+          <div className="font-bold">Opportunity: Screen Placement</div>
+        </div>
+      </Html>
+    </group>
+  );
+}
+
 export default function Explorer() {
   const [selectedMallId, setSelectedMallId] = useState<string>(malls[0].id);
   const [selectedAsset, setSelectedAsset] = useState<Asset | null>(null);
+  const [showOpportunity, setShowOpportunity] = useState(false);
+
+  useEffect(() => {
+    // Check for query parameters manually (wouter doesn't have a built-in query hook in v3 by default)
+    const search = window.location.search;
+    const params = new URLSearchParams(search);
+    const mallId = params.get('mallId');
+    const opp = params.get('opportunity');
+
+    if (mallId) {
+      setSelectedMallId(mallId);
+    }
+    if (opp === 'true') {
+      setShowOpportunity(true);
+    }
+  }, []);
 
   const currentMallAssets = assets.filter(a => a.mall_id === selectedMallId);
   const currentMall = malls.find(m => m.id === selectedMallId);
@@ -115,6 +149,8 @@ export default function Explorer() {
           <Environment preset="city" />
 
           <MallModel />
+
+          {showOpportunity && selectedMallId === 'MALL-1001' && <OpportunityMarker />}
 
           {currentMallAssets.map(asset => (
             <AssetMarker 
@@ -147,6 +183,7 @@ export default function Explorer() {
                 <Select value={selectedMallId} onValueChange={(val) => {
                   setSelectedMallId(val);
                   setSelectedAsset(null);
+                  setShowOpportunity(false); // hide opportunity if switching malls
                 }}>
                   <SelectTrigger>
                     <SelectValue placeholder="Select Mall" />

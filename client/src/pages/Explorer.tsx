@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useRef, Suspense } from "react";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
-import { OrbitControls, Html, Environment, useGLTF, ContactShadows, PerspectiveCamera } from "@react-three/drei";
+import { OrbitControls, Html, Environment, ContactShadows, PerspectiveCamera } from "@react-three/drei";
 import { useMalls, useAssets } from "@/lib/api";
 import type { Asset } from "@shared/schema";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -18,25 +18,23 @@ import { useAuth } from "@/lib/auth";
 import * as THREE from "three";
 
 // ─── CONSTANTS ──────────────────────────────────────────────────────────────
-const MODEL_SCALE = 0.01;
-const SCENE_CENTER = new THREE.Vector3(2012 * MODEL_SCALE, 0, 958 * MODEL_SCALE);
 
 const AD_ASSET_POSITIONS = [
-  { id: "AD-001", name: "Canvas Banner - Main Atrium",   type: "Digital Billboard", x: 100.2,   y: 173.6, z: 11.7,    zone: "Main Entrance",    floor: 1 },
-  { id: "AD-002", name: "Canvas Banner - North Wing",    type: "Digital Billboard", x: 93.9,    y: 110,   z: -3,      zone: "North Atrium",     floor: 1 },
-  { id: "AD-003", name: "Canvas Banner - South Wing",    type: "Digital Billboard", x: -97.2,   y: 109.7, z: 9.6,     zone: "South Wing",       floor: 1 },
-  { id: "AD-004", name: "Canvas Banner - West Corridor", type: "Digital Billboard", x: -104,    y: 135.6, z: 10.5,    zone: "South Wing",       floor: 1 },
-  { id: "AD-005", name: "Ad Screen - Food Court",        type: "Screen",            x: 5868.1,  y: 0,     z: 3469,    zone: "Food Court",       floor: 1 },
-  { id: "AD-006", name: "Menu Screen - Restaurant Row",  type: "Screen",            x: 6738.7,  y: 375.7, z: 3318.9,  zone: "Food Court",       floor: 2 },
-  { id: "AD-007", name: "Menu Screen - West Food",       type: "Screen",            x: 6738.7,  y: 375.7, z: 3121.3,  zone: "Food Court",       floor: 2 },
-  { id: "AD-008", name: "Menu Screen - East Food",       type: "Screen",            x: 6738.7,  y: 375.7, z: 2922.4,  zone: "Food Court",       floor: 2 },
-  { id: "AD-009", name: "Sign Board - Lifestyle Zone",   type: "Lightbox",          x: 5750.7,  y: 150.1, z: 2941.5,  zone: "Luxury Corridor",  floor: 1 },
-  { id: "AD-010", name: "Sale Poster - Fashion Court",   type: "Escalator Panel",   x: -2736.7, y: 376.4, z: 9,       zone: "Center Plaza",     floor: 2 },
-  { id: "AD-011", name: "Sale Poster - Style Wing",      type: "Escalator Panel",   x: -2736.6, y: 377.5, z: -195,    zone: "Center Plaza",     floor: 2 },
-  { id: "AD-012", name: "Large Banner - Sports",         type: "Digital Billboard", x: 2029,    y: 211.2, z: -1012.8, zone: "North Atrium",     floor: 1 },
-  { id: "AD-013", name: "Canvas Banner - Clothing",      type: "Digital Billboard", x: 1411,    y: 272.1, z: -2737,   zone: "Luxury Corridor",  floor: 2 },
-  { id: "AD-014", name: "Canvas Banner - Tech",          type: "Digital Billboard", x: 1091.1,  y: 272.1, z: -2737,   zone: "Luxury Corridor",  floor: 2 },
-  { id: "AD-015", name: "Neon Display - Open Sign",      type: "Screen",            x: 1687.5,  y: 341.3, z: -1480.5, zone: "Center Plaza",     floor: 2 },
+  { id: "AD-001", name: "Digital Billboard - Main Entrance",  type: "Digital Billboard", x: 0,    y: 3.5, z: 4.2,   zone: "Main Entrance",   floor: 1 },
+  { id: "AD-002", name: "Digital Billboard - North Atrium",   type: "Digital Billboard", x: 4,    y: 3.5, z: -1,    zone: "North Atrium",    floor: 1 },
+  { id: "AD-003", name: "Digital Billboard - South Wing",     type: "Digital Billboard", x: -4,   y: 3.5, z: 1,     zone: "South Wing",      floor: 1 },
+  { id: "AD-004", name: "Screen - Food Court East",           type: "Screen",            x: 10,   y: 2.5, z: 2,     zone: "Food Court",      floor: 1 },
+  { id: "AD-005", name: "Screen - Food Court West",           type: "Screen",            x: -10,  y: 2.5, z: 2,     zone: "Food Court",      floor: 1 },
+  { id: "AD-006", name: "Screen - Center Plaza",              type: "Screen",            x: 2,    y: 2.5, z: -4,    zone: "Center Plaza",    floor: 1 },
+  { id: "AD-007", name: "Lightbox - Luxury Corridor N",       type: "Lightbox",          x: 5,    y: 2.0, z: -8,    zone: "Luxury Corridor", floor: 1 },
+  { id: "AD-008", name: "Lightbox - Luxury Corridor S",       type: "Lightbox",          x: -5,   y: 2.0, z: 8,     zone: "Luxury Corridor", floor: 1 },
+  { id: "AD-009", name: "Lightbox - Main Entrance Left",      type: "Lightbox",          x: -3,   y: 2.0, z: 4.2,   zone: "Main Entrance",   floor: 1 },
+  { id: "AD-010", name: "Escalator Panel - Center A",         type: "Escalator Panel",   x: -2,   y: 2.5, z: 0,     zone: "Center Plaza",    floor: 2 },
+  { id: "AD-011", name: "Escalator Panel - Center B",         type: "Escalator Panel",   x: 2,    y: 2.5, z: 0,     zone: "Center Plaza",    floor: 2 },
+  { id: "AD-012", name: "Elevator Wrap - North Wing",         type: "Elevator Wrap",     x: 10,   y: 2.0, z: -2,    zone: "North Atrium",    floor: 1 },
+  { id: "AD-013", name: "Elevator Wrap - South Wing",         type: "Elevator Wrap",     x: -10,  y: 2.0, z: -2,    zone: "South Wing",      floor: 1 },
+  { id: "AD-014", name: "Digital Billboard - Roof Dome",      type: "Digital Billboard", x: 0,    y: 5.0, z: 0,     zone: "Center Plaza",    floor: 2 },
+  { id: "AD-015", name: "Screen - North Entry",               type: "Screen",            x: 0,    y: 2.5, z: -12,   zone: "North Atrium",    floor: 1 },
 ];
 
 // ─── ASSET TYPE CONFIG ───────────────────────────────────────────────────────
@@ -48,33 +46,72 @@ const ASSET_TYPE_CONFIG: Record<string, { color: string; emissive: string; label
   "Elevator Wrap":    { color: "#10b981", emissive: "#047857", label: "ELV" },
 };
 
-// ─── MALL MODEL COMPONENT ────────────────────────────────────────────────────
+// ─── PROCEDURAL MALL MODEL ──────────────────────────────────────────────────
 function MallModel({ onLoaded }: { onLoaded: () => void }) {
-  const { scene } = useGLTF("/Primedia_Prototype_Mall.glb");
+  useEffect(() => { onLoaded(); }, [onLoaded]);
 
-  useEffect(() => {
-    if (scene) {
-      scene.traverse((child: any) => {
-        if (child.isMesh) {
-          child.castShadow = true;
-          child.receiveShadow = true;
-          if (child.material?.name?.includes("Video_Screens") ||
-              child.material?.name?.includes("Screen")) {
-            child.material.emissive = new THREE.Color("#1a3a6e");
-            child.material.emissiveIntensity = 0.6;
-          }
-        }
-      });
-      onLoaded();
-    }
-  }, [scene, onLoaded]);
+  const wingColor = "#1a1f2e";
+  const roofColor = "#0f1320";
+  const glassColor = "#1e3a5f";
 
   return (
-    <primitive
-      object={scene}
-      scale={MODEL_SCALE}
-      position={[-SCENE_CENTER.x, -0.5, -SCENE_CENTER.z]}
-    />
+    <group>
+      <mesh castShadow receiveShadow position={[0, 1.5, 0]}>
+        <boxGeometry args={[12, 3, 8]} />
+        <meshStandardMaterial color={wingColor} metalness={0.4} roughness={0.6} />
+      </mesh>
+      <mesh castShadow receiveShadow position={[-10, 1, 0]}>
+        <boxGeometry args={[8, 2, 6]} />
+        <meshStandardMaterial color={wingColor} metalness={0.4} roughness={0.6} />
+      </mesh>
+      <mesh castShadow receiveShadow position={[10, 1, 0]}>
+        <boxGeometry args={[8, 2, 6]} />
+        <meshStandardMaterial color={wingColor} metalness={0.4} roughness={0.6} />
+      </mesh>
+      <mesh castShadow receiveShadow position={[0, 1, -8]}>
+        <boxGeometry args={[10, 2, 8]} />
+        <meshStandardMaterial color={wingColor} metalness={0.4} roughness={0.6} />
+      </mesh>
+      <mesh castShadow receiveShadow position={[0, 1, 8]}>
+        <boxGeometry args={[10, 2, 8]} />
+        <meshStandardMaterial color={wingColor} metalness={0.4} roughness={0.6} />
+      </mesh>
+
+      <mesh position={[0, 3.15, 0]}>
+        <boxGeometry args={[13, 0.3, 9]} />
+        <meshStandardMaterial color={roofColor} metalness={0.6} roughness={0.3} />
+      </mesh>
+
+      {[-4, -1, 2, 5].map((x, i) => (
+        <mesh key={`glass-front-${i}`} position={[x, 1.5, 4.01]}>
+          <planeGeometry args={[2, 2.5]} />
+          <meshStandardMaterial color={glassColor} emissive="#1a3a6e" emissiveIntensity={0.4} metalness={0.9} roughness={0.1} transparent opacity={0.7} />
+        </mesh>
+      ))}
+      {[-4, -1, 2, 5].map((x, i) => (
+        <mesh key={`glass-back-${i}`} position={[x, 1.5, -4.01]} rotation={[0, Math.PI, 0]}>
+          <planeGeometry args={[2, 2.5]} />
+          <meshStandardMaterial color={glassColor} emissive="#1a3a6e" emissiveIntensity={0.4} metalness={0.9} roughness={0.1} transparent opacity={0.7} />
+        </mesh>
+      ))}
+
+      <mesh position={[0, 4, 0]}>
+        <cylinderGeometry args={[3, 4, 2, 6]} />
+        <meshStandardMaterial color={glassColor} emissive="#0d2847" emissiveIntensity={0.3} metalness={0.8} roughness={0.2} transparent opacity={0.5} />
+      </mesh>
+
+      {[[-7, 0, 5], [7, 0, 5], [-7, 0, -5], [7, 0, -5]].map(([x, y, z], i) => (
+        <mesh key={`pillar-${i}`} position={[x, 1.5, z]} castShadow>
+          <cylinderGeometry args={[0.15, 0.15, 3, 8]} />
+          <meshStandardMaterial color="#374151" metalness={0.8} roughness={0.2} />
+        </mesh>
+      ))}
+
+      <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]}>
+        <planeGeometry args={[40, 40]} />
+        <meshStandardMaterial color="#0c1018" roughness={0.9} />
+      </mesh>
+    </group>
   );
 }
 
@@ -95,9 +132,9 @@ function AdAssetMarker({
   const meshRef = useRef<THREE.Mesh>(null);
   const config = ASSET_TYPE_CONFIG[assetDef.type] || ASSET_TYPE_CONFIG["Screen"];
 
-  const worldX = (assetDef.x * MODEL_SCALE) - SCENE_CENTER.x;
-  const worldY = Math.max(assetDef.y * MODEL_SCALE, 0) + 0.5;
-  const worldZ = (assetDef.z * MODEL_SCALE) - SCENE_CENTER.z;
+  const worldX = assetDef.x;
+  const worldY = assetDef.y;
+  const worldZ = assetDef.z;
 
   useFrame((state) => {
     if (meshRef.current) {
@@ -656,6 +693,4 @@ export default function Explorer() {
     </div>
   );
 }
-
-useGLTF.preload("/Primedia_Prototype_Mall.glb");
 

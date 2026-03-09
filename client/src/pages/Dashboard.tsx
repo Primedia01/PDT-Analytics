@@ -18,12 +18,12 @@ export default function Dashboard() {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card className="bg-card hover-elevate border-border/50 transition-all">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Total Malls</CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground">Est. Monthly Value</CardTitle>
             <Building2 className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold">{portfolioStats.totalMalls}</div>
-            <p className="text-xs text-muted-foreground mt-1">Across 27 cities</p>
+            <div className="text-3xl font-bold">R {(portfolioStats.totalImpressions * 0.05 / 1000).toFixed(1)}k</div>
+            <p className="text-xs text-muted-foreground mt-1">Based on CPM</p>
           </CardContent>
         </Card>
         

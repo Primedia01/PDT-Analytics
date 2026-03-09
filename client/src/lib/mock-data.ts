@@ -34,16 +34,44 @@ export type AnalyticsPoint = {
   traffic_volume: number;
 };
 
-// Generate 27 Malls
-const cities = ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose", "Austin", "Jacksonville", "Fort Worth", "Columbus", "Charlotte", "San Francisco", "Indianapolis", "Seattle", "Denver", "Washington", "Boston", "El Paso", "Nashville", "Detroit", "Oklahoma City", "Portland", "Las Vegas"];
+// Generate 27 South African Malls
+const southAfricanMalls = [
+  { city: "Johannesburg", name: "Sandton City" },
+  { city: "Cape Town", name: "Mall of Africa" },
+  { city: "Durban", name: "V&A Waterfront" },
+  { city: "Pretoria", name: "Menlyn Park" },
+  { city: "Durban", name: "Gateway Theatre of Shopping" },
+  { city: "Johannesburg", name: "Rosebank Mall" },
+  { city: "Cape Town", name: "Canal Walk" },
+  { city: "Pretoria", name: "Brooklyn Mall" },
+  { city: "Johannesburg", name: "Eastgate Shopping Centre" },
+  { city: "Cape Town", name: "Cavendish Square" },
+  { city: "Durban", name: "Pavilion Shopping Centre" },
+  { city: "Johannesburg", name: "Cresta Shopping Centre" },
+  { city: "Pretoria", name: "Centurion Mall" },
+  { city: "Port Elizabeth", name: "Greenacres Shopping Centre" },
+  { city: "Bloemfontein", name: "Walmer Park Shopping Centre" },
+  { city: "East London", name: "Somerset Mall" },
+  { city: "Nelspruit", name: "Hemingways Mall" },
+  { city: "Kimberley", name: "Ilanga Mall" },
+  { city: "Polokwane", name: "Riverside Mall" },
+  { city: "Pietermaritzburg", name: "Liberty Promenade" },
+  { city: "George", name: "Mimosa Mall" },
+  { city: "Rustenburg", name: "Loch Logan Waterfront" },
+  { city: "Upington", name: "Waterfall Mall" },
+  { city: "Potchefstroom", name: "Greenstone Shopping Centre" },
+  { city: "Klerksdorp", name: "Clearwater Mall" },
+  { city: "Welkom", name: "Fourways Mall" },
+  { city: "Middelburg", name: "Maponya Mall" }
+];
 
-export const malls: Mall[] = Array.from({ length: 27 }).map((_, i) => ({
+export const malls: Mall[] = southAfricanMalls.map((m, i) => ({
   id: `MALL-${1000 + i}`,
-  name: `Premium Outlet ${cities[i]}`,
-  city: cities[i],
-  size_sq_m: Math.floor(Math.random() * 50000) + 20000,
-  floors: Math.floor(Math.random() * 3) + 1,
-  footfall: Math.floor(Math.random() * 500000) + 100000,
+  name: m.name,
+  city: m.city,
+  size_sq_m: Math.floor(Math.random() * 80000) + 30000,
+  floors: Math.floor(Math.random() * 4) + 1,
+  footfall: Math.floor(Math.random() * 800000) + 150000,
 }));
 
 // Generate 300 Assets spread across malls

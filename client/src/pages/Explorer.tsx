@@ -15,7 +15,7 @@ function MallModel({ showHeatmap }: { showHeatmap: boolean }) {
   return (
     <group>
       {/* Floorplan Layout representing mall corridors */}
-      <mesh receiveShadow position={[0, -0.49, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+      <mesh receiveShadow position={[0, -0.01, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[60, 60]} />
         <meshStandardMaterial color="#0f0f0f" roughness={0.9} />
       </mesh>
@@ -23,21 +23,21 @@ function MallModel({ showHeatmap }: { showHeatmap: boolean }) {
       {showHeatmap && (
         <group>
           {/* High Traffic Heatmap Overlay (Red/Yellow) */}
-          <mesh receiveShadow position={[5, -0.48, 5]} rotation={[-Math.PI / 2, 0, 0]}>
-            <planeGeometry args={[15, 20]} />
-            <meshBasicMaterial color="#ef4444" opacity={0.15} transparent depthWrite={false} />
+          <mesh position={[5, 0.01, 5]} rotation={[-Math.PI / 2, 0, 0]}>
+            <planeGeometry args={[25, 25]} />
+            <meshBasicMaterial color="#ef4444" opacity={0.6} transparent depthWrite={false} />
           </mesh>
           
           {/* Medium Traffic Heatmap Overlay */}
-          <mesh receiveShadow position={[-10, -0.48, -5]} rotation={[-Math.PI / 2, 0, 0]}>
-            <planeGeometry args={[25, 10]} />
-            <meshBasicMaterial color="#eab308" opacity={0.15} transparent depthWrite={false} />
+          <mesh position={[-10, 0.01, -5]} rotation={[-Math.PI / 2, 0, 0]}>
+            <planeGeometry args={[35, 20]} />
+            <meshBasicMaterial color="#eab308" opacity={0.5} transparent depthWrite={false} />
           </mesh>
 
           {/* Low Traffic Heatmap Overlay */}
-          <mesh receiveShadow position={[15, -0.48, -15]} rotation={[-Math.PI / 2, 0, 0]}>
-            <planeGeometry args={[15, 15]} />
-            <meshBasicMaterial color="#3b82f6" opacity={0.1} transparent depthWrite={false} />
+          <mesh position={[15, 0.01, -15]} rotation={[-Math.PI / 2, 0, 0]}>
+            <planeGeometry args={[25, 25]} />
+            <meshBasicMaterial color="#3b82f6" opacity={0.3} transparent depthWrite={false} />
           </mesh>
         </group>
       )}
@@ -204,9 +204,9 @@ export default function Explorer() {
         </Canvas>
 
         {/* UI Overlay: Top Bar */}
-        <div className="absolute top-6 left-6 right-6 flex justify-between items-start pointer-events-none">
+        <div className="absolute top-6 left-6 right-6 flex justify-between items-start pointer-events-none z-10">
           <div className="pointer-events-auto">
-            <Card className="w-80 bg-background/80 backdrop-blur-md border-border/50">
+            <Card className="w-80 bg-background/80 backdrop-blur-md border-border/50 shadow-xl">
               <CardHeader className="pb-4">
                 <CardTitle className="text-lg">Mall Explorer</CardTitle>
                 <CardDescription>Select a property to view its digital twin.</CardDescription>
@@ -247,6 +247,18 @@ export default function Explorer() {
                 )}
               </CardContent>
             </Card>
+          </div>
+
+          <div className="pointer-events-auto flex flex-col gap-3">
+            <Button 
+              variant={showHeatmap ? "default" : "secondary"} 
+              size="lg"
+              className="shadow-xl font-medium"
+              onClick={() => setShowHeatmap(!showHeatmap)}
+            >
+              <Activity className="h-5 w-5 mr-2" />
+              {showHeatmap ? "Hide Heatmap Overlay" : "Show Heatmap Overlay"}
+            </Button>
           </div>
         </div>
       </div>
@@ -324,19 +336,18 @@ export default function Explorer() {
               </div>
               <div className="space-y-4">
                 <p className="text-xs text-muted-foreground">Visualize shopper traffic patterns around this asset's zone.</p>
-                <div className="h-40 rounded-md border border-border/50 bg-muted/20 flex items-center justify-center relative overflow-hidden">
-                  {showHeatmap ? (
-                    <>
-                      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-                      <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/30 blur-2xl rounded-full"></div>
-                      <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-accent/30 blur-xl rounded-full"></div>
-                      <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-chart-3/20 blur-2xl rounded-full"></div>
-                    </>
-                  ) : (
-                    <Button variant="outline" size="sm" onClick={() => setShowHeatmap(true)}>
-                      Generate Heatmap
-                    </Button>
-                  )}
+                <div className="h-40 rounded-md border border-border/50 bg-background relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                  <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/30 blur-2xl rounded-full"></div>
+                  <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-accent/30 blur-xl rounded-full"></div>
+                  <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-chart-3/20 blur-2xl rounded-full"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    {!showHeatmap && (
+                      <Button variant="secondary" size="sm" onClick={() => setShowHeatmap(true)} className="shadow-md">
+                        Show on Floorplan
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

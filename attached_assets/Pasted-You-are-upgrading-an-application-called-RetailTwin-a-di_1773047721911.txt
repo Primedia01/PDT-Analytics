@@ -1,0 +1,232 @@
+You are upgrading an application called RetailTwin, a digital twin and analytics platform for retail media assets in shopping malls.
+
+The system currently includes:
+
+Dashboard
+
+Mall Explorer
+
+Portfolio Analytics
+
+Assets
+
+Campaign Simulator
+
+AI Insights
+
+The system already supports user roles.
+
+Now implement multi-tenant architecture so that multiple organizations can use the platform securely without seeing each other’s data.
+
+Tenant Concept
+
+A tenant represents an organization.
+
+Examples:
+
+Primedia
+Adidas
+Nike
+Mall of Africa
+Canal Walk
+
+Each tenant has:
+
+its own users
+
+its own campaigns
+
+its own assets or mall access
+
+Users can only access data belonging to their tenant.
+
+Database Structure
+
+Create a tenants table.
+
+Tenants
+-------
+id
+name
+type
+created_at
+
+Tenant types:
+
+media_owner
+advertiser
+agency
+mall_operator
+Users Table
+
+Update the users table.
+
+Users
+-----
+id
+name
+email
+role
+tenant_id
+created_at
+
+Every user must belong to a tenant.
+
+Malls Table
+Malls
+-----
+id
+name
+city
+tenant_id
+
+If the tenant is a mall operator, they only see their malls.
+
+Assets Table
+Assets
+------
+id
+name
+type
+mall_id
+tenant_id
+impressions
+occupancy
+
+Assets belong to the media owner tenant.
+
+Campaign Table
+Campaigns
+---------
+id
+name
+advertiser_tenant_id
+start_date
+end_date
+budget
+
+Campaigns should only be visible to:
+
+the advertiser
+
+the media owner managing the inventory
+
+Tenant Data Filtering
+
+All queries must filter by tenant_id.
+
+Example:
+
+SELECT * FROM assets
+WHERE tenant_id = current_user.tenant_id
+
+This ensures data isolation.
+
+Example Data Access Rules
+Primedia (Media Owner)
+
+Can access:
+
+all malls
+all assets
+portfolio analytics
+AI insights
+Advertiser (Adidas)
+
+Can access:
+
+campaign planner
+recommended assets
+their campaign reports
+
+Cannot access:
+
+internal occupancy
+other advertisers
+revenue projections
+Mall Operator
+
+Can access:
+
+their mall digital twin
+footfall analytics
+asset performance in their mall
+
+Cannot access:
+
+other malls
+advertiser campaign data
+portfolio revenue
+Middleware Access Control
+
+Add middleware that validates:
+
+user role
+tenant_id
+resource access
+
+Example pseudocode:
+
+if (resource.tenant_id !== user.tenant_id) {
+   denyAccess()
+}
+UI Changes
+
+Add organization selector for admin users.
+
+Example:
+
+Organization: Primedia
+
+Display organization in profile:
+
+User: Louis Botha
+Role: Admin
+Organization: Primedia
+Future Tenant Capabilities
+
+The platform should support:
+
+multiple media companies
+multiple mall operators
+multiple advertisers
+
+All running on the same platform instance.
+
+Goal
+
+RetailTwin becomes a multi-tenant retail media platform where:
+
+media owners manage assets
+
+advertisers plan campaigns
+
+mall partners view their performance
+
+agencies manage campaigns
+
+All with strict data isolation between tenants.
+
+What This Achieves
+
+Your platform now becomes a real SaaS product.
+
+Instead of:
+
+internal analytics tool
+
+You now have:
+
+Retail Media Platform
+
+That could theoretically serve:
+
+media owners
+
+mall groups
+
+advertisers
+
+agencies
+
+on the same infrastructure.

@@ -4,11 +4,27 @@ import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { assets, malls } from "@/lib/mock-data";
 import { Search, SlidersHorizontal } from "lucide-react";
+import { useAuth } from "@/lib/auth";
 
 export default function AssetsPage() {
   const [search, setSearch] = useState("");
+  const { user } = useAuth();
 
-  const filteredAssets = assets.filter(asset => 
+  // Tenant/Role-based filtering for assets
+  const accessibleAssets = assets.filter(asset => {
+    // Media owners see their own assets
+    if (user.role === "admin" || user.role === "internal" || user.role === "sales") {
+      return asset.tenant_id === user.tenant_id;
+    }
+    // Mall partners only see assets in their allowed malls
+    if (user.role === "mall_partner" && user.allowedMalls) {
+      return user.allowedMalls.includes(asset.mall_id);
+    }
+    // Advertisers ideally shouldn't be here, but just in case, show empty or filter differently
+    return false;
+  });
+
+  const filteredAssets = accessibleAssets.filter(asset => 
     asset.asset_name.toLowerCase().includes(search.toLowerCase()) ||
     asset.asset_type.toLowerCase().includes(search.toLowerCase()) ||
     malls.find(m => m.id === asset.mall_id)?.name.toLowerCase().includes(search.toLowerCase())
@@ -19,7 +35,7 @@ export default function AssetsPage() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Asset Inventory</h1>
-          <p className="text-muted-foreground mt-1">Manage and monitor all digital advertising assets.</p>
+          <p className="text-muted-foreground mt-1">Manage and monitor digital advertising assets.</p>
         </div>
         
         <div className="flex items-center gap-2">
@@ -85,6 +101,13 @@ export default function AssetsPage() {
                   </TableRow>
                 );
               })}
+              {filteredAssets.length === 0 && (
+                <TableRow>
+                  <TableCell colSpan={7} className="text-center py-8 text-muted-foreground">
+                    No assets found for your organization.
+                  </TableCell>
+                </TableRow>
+              )}
             </TableBody>
           </Table>
           {filteredAssets.length > 50 && (

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { X, Activity, Users, Clock, MonitorPlay, BarChart2, Lightbulb } from "lucide-react";
 import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
 import { useLocation } from "wouter";
+import { useAuth } from "@/lib/auth";
 
 // Simple 3D Mall Representation (Floor plane + some blocks)
 function MallModel() {
@@ -108,24 +109,34 @@ function OpportunityMarker() {
 }
 
 export default function Explorer() {
-  const [selectedMallId, setSelectedMallId] = useState<string>(malls[0].id);
+  const { user } = useAuth();
+  
+  // Filter available malls based on role
+  const allowedMalls = user.role === "mall_partner" && user.allowedMalls 
+    ? malls.filter(m => user.allowedMalls?.includes(m.id)) 
+    : malls;
+
+  const [selectedMallId, setSelectedMallId] = useState<string>(allowedMalls[0]?.id || malls[0].id);
   const [selectedAsset, setSelectedAsset] = useState<Asset | null>(null);
   const [showOpportunity, setShowOpportunity] = useState(false);
 
   useEffect(() => {
-    // Check for query parameters manually (wouter doesn't have a built-in query hook in v3 by default)
+    // Check for query parameters manually
     const search = window.location.search;
     const params = new URLSearchParams(search);
     const mallId = params.get('mallId');
     const opp = params.get('opportunity');
 
     if (mallId) {
-      setSelectedMallId(mallId);
+      // Ensure the mall ID is allowed before selecting it
+      if (allowedMalls.some(m => m.id === mallId)) {
+        setSelectedMallId(mallId);
+      }
     }
     if (opp === 'true') {
       setShowOpportunity(true);
     }
-  }, []);
+  }, [allowedMalls]);
 
   const currentMallAssets = assets.filter(a => a.mall_id === selectedMallId);
   const currentMall = malls.find(m => m.id === selectedMallId);
@@ -135,6 +146,19 @@ export default function Explorer() {
     time: `${i + 8}:00`,
     impressions: Math.floor(Math.random() * 500) + (i === 4 || i === 10 ? 800 : 100) // Peaks at 12pm and 6pm
   }));
+
+  // Prevent users from accessing if they have no allowed malls
+  if (allowedMalls.length === 0) {
+    return (
+      <div className="flex h-screen items-center justify-center bg-background">
+        <div className="text-center">
+          <Building2 className="h-12 w-12 text-muted-foreground mx-auto mb-4 opacity-50" />
+          <h2 className="text-2xl font-bold">No Malls Available</h2>
+          <p className="text-muted-foreground mt-2">Your organization does not have access to any malls.</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex h-screen w-full relative overflow-hidden animate-in fade-in duration-500">
@@ -150,7 +174,10 @@ export default function Explorer() {
 
           <MallModel />
 
-          {showOpportunity && selectedMallId === 'MALL-1001' && <OpportunityMarker />}
+          {/* Only show AI Opportunity for internal/admin roles */}
+          {showOpportunity && selectedMallId === 'MALL-1001' && (user.role === 'admin' || user.role === 'internal') && (
+            <OpportunityMarker />
+          )}
 
           {currentMallAssets.map(asset => (
             <AssetMarker 
@@ -180,20 +207,26 @@ export default function Explorer() {
                 <CardDescription>Select a property to view its digital twin.</CardDescription>
               </CardHeader>
               <CardContent>
-                <Select value={selectedMallId} onValueChange={(val) => {
-                  setSelectedMallId(val);
-                  setSelectedAsset(null);
-                  setShowOpportunity(false); // hide opportunity if switching malls
-                }}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select Mall" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {malls.map(mall => (
-                      <SelectItem key={mall.id} value={mall.id}>{mall.name}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                {allowedMalls.length > 1 ? (
+                  <Select value={selectedMallId} onValueChange={(val) => {
+                    setSelectedMallId(val);
+                    setSelectedAsset(null);
+                    setShowOpportunity(false); // hide opportunity if switching malls
+                  }}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select Mall" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {allowedMalls.map(mall => (
+                        <SelectItem key={mall.id} value={mall.id}>{mall.name}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                ) : (
+                  <div className="p-3 bg-muted rounded-md text-sm font-medium">
+                    {allowedMalls[0].name}
+                  </div>
+                )}
                 
                 {currentMall && (
                   <div className="mt-4 grid grid-cols-2 gap-4 text-sm">

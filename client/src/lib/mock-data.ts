@@ -1,5 +1,19 @@
 import { subDays, subMonths, format } from "date-fns";
 
+export type TenantType = "media_owner" | "advertiser" | "agency" | "mall_operator";
+
+export type Tenant = {
+  id: string;
+  name: string;
+  type: TenantType;
+};
+
+export const tenants: Tenant[] = [
+  { id: "TENANT-1", name: "Primedia", type: "media_owner" },
+  { id: "TENANT-2", name: "Adidas", type: "advertiser" },
+  { id: "TENANT-3", name: "Mall of Africa", type: "mall_operator" },
+];
+
 export type Mall = {
   id: string;
   name: string;
@@ -8,6 +22,7 @@ export type Mall = {
   floors: number;
   footfall: number;
   coordinates: [number, number]; // [lat, lng]
+  tenant_id: string; // Tenant of the mall operator
 };
 
 export type AssetType = "Digital Billboard" | "Screen" | "Lightbox" | "Elevator Wrap" | "Escalator Panel";
@@ -15,6 +30,7 @@ export type AssetType = "Digital Billboard" | "Screen" | "Lightbox" | "Elevator 
 export type Asset = {
   id: string;
   mall_id: string;
+  tenant_id: string; // Tenant of the media owner
   asset_name: string;
   asset_type: AssetType;
   floor: number;
@@ -27,6 +43,26 @@ export type Asset = {
   dwell_time_seconds: number;
   engagement_score: number; // 0-100
 };
+
+export type Campaign = {
+  id: string;
+  name: string;
+  advertiser_tenant_id: string;
+  start_date: string;
+  end_date: string;
+  budget: number;
+};
+
+export const campaigns: Campaign[] = [
+  {
+    id: "CAMP-1",
+    name: "Adidas Originals Launch",
+    advertiser_tenant_id: "TENANT-2", // Adidas
+    start_date: format(new Date(), "yyyy-MM-dd"),
+    end_date: format(new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), "yyyy-MM-dd"),
+    budget: 500000,
+  }
+];
 
 export type AnalyticsPoint = {
   date: string;
@@ -73,7 +109,8 @@ export const malls: Mall[] = southAfricanMalls.map((m, i) => ({
   size_sq_m: Math.floor(Math.random() * 80000) + 30000,
   floors: Math.floor(Math.random() * 4) + 1,
   footfall: Math.floor(Math.random() * 800000) + 150000,
-  coordinates: m.coordinates
+  coordinates: m.coordinates,
+  tenant_id: m.name === "Mall of Africa" ? "TENANT-3" : "TENANT-OTHER" // Example of assigning Mall of Africa to specific tenant
 }));
 
 // Generate 300 Assets spread across malls
@@ -87,6 +124,7 @@ export const assets: Asset[] = Array.from({ length: 300 }).map((_, i) => {
   return {
     id: `AST-${5000 + i}`,
     mall_id: mall.id,
+    tenant_id: "TENANT-1", // Primedia owns the assets
     asset_name: `${type} ${Math.floor(Math.random() * 100)}`,
     asset_type: type,
     floor: Math.floor(Math.random() * mall.floors),

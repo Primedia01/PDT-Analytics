@@ -1,0 +1,259 @@
+You are improving an existing platform called RetailTwin, a retail media analytics and digital twin platform for shopping malls.
+
+The platform currently includes:
+
+Dashboard
+
+Mall Explorer
+
+Portfolio Analytics
+
+Assets
+
+Campaign Simulator
+
+AI Insights
+
+The system is used by multiple types of users, and each role must have different permissions and access levels.
+
+Implement Role-Based Access Control (RBAC).
+
+User Roles
+
+Create the following roles:
+
+Admin
+Internal User
+Sales Team
+Advertiser
+Mall Partner
+
+Each role should only see the relevant parts of the platform.
+
+Role Permissions
+1. Admin
+
+Full system access.
+
+Can access:
+
+Dashboard
+
+Mall Explorer
+
+Portfolio Analytics
+
+Assets
+
+Campaign Simulator
+
+AI Insights
+
+User Management
+
+System Settings
+
+Capabilities:
+
+create users
+edit users
+assign roles
+edit assets
+edit mall data
+configure analytics
+2. Internal User (Operations / Analytics)
+
+Internal Primedia staff.
+
+Access:
+
+Dashboard
+Mall Explorer
+Portfolio Analytics
+Assets
+AI Insights
+
+Restrictions:
+
+cannot edit user roles
+cannot change system settings
+cannot delete assets
+3. Sales Team
+
+Used by sales teams pitching campaigns to advertisers.
+
+Access:
+
+Dashboard (limited)
+Mall Explorer
+Campaign Simulator
+Asset availability
+Portfolio highlights
+
+Cannot access:
+
+internal analytics
+AI insights
+operational data
+
+Purpose:
+
+Help sales teams plan campaigns and present inventory to clients.
+
+4. Advertiser
+
+External brand or agency users.
+
+Access:
+
+Campaign Planner
+Selected mall explorer view
+Recommended assets
+Campaign performance reports
+
+Restrictions:
+
+Cannot see:
+
+internal portfolio data
+occupancy metrics
+internal revenue estimates
+other advertisers
+AI internal insights
+
+Advertisers should only see:
+
+their campaigns
+recommended placements
+estimated reach
+5. Mall Partner
+
+Shopping mall property managers.
+
+Access:
+
+Mall Explorer (their mall only)
+Footfall analytics
+Asset locations
+Performance of assets in their mall
+
+Restrictions:
+
+Cannot access:
+
+other malls
+advertiser data
+revenue projections
+internal strategy insights
+Navigation Based on Role
+
+Adjust the sidebar dynamically.
+
+Example:
+
+Admin
+Dashboard
+Mall Explorer
+Portfolio Analytics
+Assets
+Campaign Simulator
+AI Insights
+User Management
+Settings
+Advertiser
+Campaign Planner
+My Campaigns
+Mall Explorer
+Reports
+Sales Team
+Dashboard
+Mall Explorer
+Campaign Simulator
+Available Assets
+Access Control Implementation
+
+Implement middleware that checks:
+
+user role
+requested page
+permissions
+
+Example logic:
+
+if (user.role !== "Admin") {
+   hideAdminPanels()
+}
+Database Structure
+
+Create a user table:
+
+Users
+-----
+id
+name
+email
+role
+organization
+created_at
+
+Possible role values:
+
+admin
+internal
+sales
+advertiser
+mall_partner
+Security Rules
+
+Ensure:
+
+Advertisers cannot access internal APIs
+Mall partners only see their malls
+Sales teams cannot access internal analytics
+
+Use backend permission validation.
+
+Optional Feature: Organization Support
+
+Allow users to belong to organizations:
+
+Primedia
+Adidas
+Nike
+Mall of Africa
+
+This ensures advertisers only see their campaigns.
+
+UI Enhancements
+
+Show role in the user profile.
+
+Example:
+
+User: Louis Botha
+Role: Admin
+Organization: Primedia
+Goal
+
+Transform RetailTwin into a multi-tenant enterprise platform where:
+
+internal teams manage assets
+sales teams pitch campaigns
+advertisers plan media buys
+mall partners view their performance
+
+All users access only the data relevant to their role.
+
+Result
+
+RetailTwin becomes a secure Retail Media Platform capable of supporting:
+
+internal operations
+
+advertiser access
+
+sales teams
+
+mall partners
+
+without exposing sensitive data.

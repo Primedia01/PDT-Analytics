@@ -6,8 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { useMalls, useAssets, useCreateCampaign } from "@/lib/api";
-import { CheckCircle2, TrendingUp, Users, Target, CreditCard, Sparkles, Building2 } from "lucide-react";
+import { CheckCircle2, TrendingUp, Users, Target, CreditCard, Sparkles, Building2, ArrowRight } from "lucide-react";
 import { useAuth } from "@/lib/auth";
+import { Link } from "wouter";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export function CampaignSimulator() {
@@ -261,7 +262,13 @@ export function CampaignSimulator() {
                 <div className="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-center animate-in fade-in zoom-in">
                   <CheckCircle2 className="h-8 w-8 text-emerald-500 mx-auto mb-2" />
                   <h4 className="font-bold text-emerald-500 mb-1">Campaign Successfully Booked!</h4>
-                  <p className="text-sm text-emerald-500/80">Your programmatic buys have been secured. The creatives will begin serving on the selected dates.</p>
+                  <p className="text-sm text-emerald-500/80 mb-3">Your programmatic buys have been secured. The creatives will begin serving on the selected dates.</p>
+                  <Link href="/campaigns">
+                    <Button variant="outline" size="sm" className="border-emerald-500/30 text-emerald-500 hover:bg-emerald-500/10" data-testid="button-view-campaigns">
+                      View My Campaigns
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Button>
+                  </Link>
                 </div>
              ) : (
                <Button onClick={handleLaunch} className="w-full h-12 text-base font-bold bg-primary hover:bg-primary/90">

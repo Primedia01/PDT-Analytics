@@ -11,6 +11,7 @@ import Explorer from "@/pages/Explorer";
 import Analytics from "@/pages/Analytics";
 import Assets from "@/pages/Assets";
 import Campaign from "@/pages/Campaign";
+import Campaigns from "@/pages/Campaigns";
 import Marketplace from "@/pages/Marketplace";
 import NotFound from "@/pages/not-found";
 
@@ -24,6 +25,7 @@ function Router() {
           <Route path="/analytics" component={Analytics}/>
           <Route path="/assets" component={Assets}/>
           <Route path="/campaign" component={Campaign}/>
+          <Route path="/campaigns" component={Campaigns}/>
           <Route path="/marketplace" component={Marketplace}/>
           {/* Fallback to 404 */}
           <Route component={NotFound} />

@@ -1,4 +1,4 @@
-import { LayoutDashboard, Building2, BarChart3, Settings, MapPin, Target, Users as UsersIcon, Shield, ChevronDown, Store } from "lucide-react";
+import { LayoutDashboard, Building2, BarChart3, Settings, MapPin, Target, Users as UsersIcon, Shield, ChevronDown, Store, ListChecks } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { useAuth, Role } from "@/lib/auth";
@@ -18,8 +18,7 @@ export function Sidebar() {
           { name: "Assets", href: "/assets", icon: MapPin },
           { name: "Media Marketplace", href: "/marketplace", icon: Store },
           { name: "Campaign Simulator", href: "/campaign", icon: Target },
-          { name: "User Management", href: "#", icon: UsersIcon },
-          { name: "Settings", href: "#", icon: Settings },
+          { name: "All Campaigns", href: "/campaigns", icon: ListChecks },
         ];
       case "internal":
         return [
@@ -27,6 +26,7 @@ export function Sidebar() {
           { name: "Mall Explorer", href: "/explorer", icon: Building2 },
           { name: "Portfolio Analytics", href: "/analytics", icon: BarChart3 },
           { name: "Assets", href: "/assets", icon: MapPin },
+          { name: "All Campaigns", href: "/campaigns", icon: ListChecks },
         ];
       case "sales":
         return [
@@ -35,14 +35,15 @@ export function Sidebar() {
           { name: "Campaign Simulator", href: "/campaign", icon: Target },
           { name: "Media Marketplace", href: "/marketplace", icon: Store },
           { name: "Available Assets", href: "/assets", icon: MapPin },
+          { name: "All Campaigns", href: "/campaigns", icon: ListChecks },
         ];
       case "advertiser":
         return [
+          { name: "Dashboard", href: "/", icon: LayoutDashboard },
           { name: "Campaign Planner", href: "/campaign", icon: Target },
           { name: "Media Marketplace", href: "/marketplace", icon: Store },
-          { name: "My Campaigns", href: "#", icon: BarChart3 },
+          { name: "My Campaigns", href: "/campaigns", icon: ListChecks },
           { name: "Mall Explorer", href: "/explorer", icon: Building2 },
-          { name: "Reports", href: "#", icon: LayoutDashboard },
         ];
       case "mall_partner":
         return [

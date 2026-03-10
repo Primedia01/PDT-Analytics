@@ -47,6 +47,7 @@ Retail Media Operating System — a full-stack analytics platform for a portfoli
 - `/explorer` — 3D Mall Explorer with digital twin, heatmap overlay, asset analytics panel
 - `/analytics` — Portfolio Analytics (admin/internal only) with AI Insights
 - `/assets` — Asset Inventory with search/filter, Add Asset form, CSV bulk import
+- `/campaigns` — My Campaigns / All Campaigns list (role-dependent view)
 - `/marketplace` — Programmatic Media Marketplace with dynamic pricing
 - `/campaign` — Campaign Builder with AI optimizer and 2-step booking flow
 

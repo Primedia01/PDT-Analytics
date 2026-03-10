@@ -81,7 +81,8 @@ export default function Analytics() {
                   ))}
                 </Pie>
                 <Tooltip 
-                  contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', borderRadius: '8px' }}
+                  contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--card-foreground))' }}
+                  itemStyle={{ color: 'hsl(var(--card-foreground))' }}
                 />
                 <Legend />
               </PieChart>
@@ -101,7 +102,9 @@ export default function Analytics() {
                 <YAxis dataKey="name" type="category" stroke="hsl(var(--muted-foreground))" fontSize={11} tickLine={false} axisLine={false} width={80} />
                 <Tooltip 
                   cursor={{fill: 'hsl(var(--muted))', opacity: 0.4}}
-                  contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', borderRadius: '8px' }}
+                  contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--card-foreground))' }}
+                  itemStyle={{ color: 'hsl(var(--card-foreground))' }}
+                  labelStyle={{ color: 'hsl(var(--card-foreground))' }}
                 />
                 <Legend />
                 <Bar dataKey="impressions" name="Impressions" fill="hsl(var(--primary))" radius={[0, 4, 4, 0]} />

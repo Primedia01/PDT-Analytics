@@ -364,8 +364,9 @@ function AssetInfoPanel({
                 <XAxis dataKey="time" stroke="hsl(var(--muted-foreground))" fontSize={9} tickLine={false} axisLine={false} />
                 <YAxis stroke="hsl(var(--muted-foreground))" fontSize={9} tickLine={false} axisLine={false} />
                 <Tooltip
-                  contentStyle={{ backgroundColor: "hsl(var(--card))", borderColor: "hsl(var(--border))", borderRadius: "8px", fontSize: "11px" }}
-                  itemStyle={{ color: "hsl(var(--foreground))" }}
+                  contentStyle={{ backgroundColor: "hsl(var(--card))", borderColor: "hsl(var(--border))", borderRadius: "8px", fontSize: "11px", color: "hsl(var(--card-foreground))" }}
+                  itemStyle={{ color: "hsl(var(--card-foreground))" }}
+                  labelStyle={{ color: "hsl(var(--card-foreground))" }}
                 />
                 <Area type="monotone" dataKey="impressions" stroke={config.color} strokeWidth={2} fillOpacity={1} fill="url(#areaGrad)" />
               </AreaChart>

@@ -306,8 +306,9 @@ export default function Dashboard() {
                 <XAxis dataKey="date" stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} />
                 <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(val) => `${val / 1000}k`} />
                 <Tooltip 
-                  contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', borderRadius: '8px' }}
-                  itemStyle={{ color: 'hsl(var(--foreground))' }}
+                  contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--card-foreground))' }}
+                  itemStyle={{ color: 'hsl(var(--card-foreground))' }}
+                  labelStyle={{ color: 'hsl(var(--card-foreground))' }}
                 />
                 <Area type="monotone" dataKey="impressions" stroke="hsl(var(--primary))" strokeWidth={2} fillOpacity={1} fill="url(#colorImpressions)" />
               </AreaChart>
@@ -329,7 +330,9 @@ export default function Dashboard() {
                 <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(val) => `${val / 1000}k`} />
                 <Tooltip 
                   cursor={{fill: 'hsl(var(--muted))', opacity: 0.4}}
-                  contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', borderRadius: '8px' }}
+                  contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--card-foreground))' }}
+                  itemStyle={{ color: 'hsl(var(--card-foreground))' }}
+                  labelStyle={{ color: 'hsl(var(--card-foreground))' }}
                 />
                 <Bar dataKey="footfall" fill="hsl(var(--accent))" radius={[4, 4, 0, 0]} />
               </BarChart>

@@ -1,16 +1,17 @@
 import { db } from "./db";
 import { tenants, users, malls, assets, campaigns, analyticsData } from "@shared/schema";
-import { sql } from "drizzle-orm";
 import { format, subDays } from "date-fns";
 
-async function seed() {
-  console.log("Seeding database...");
+export async function seed() {
+  console.log("Checking if database needs seeding...");
 
   const [existingMall] = await db.select().from(malls).limit(1);
   if (existingMall) {
     console.log("Database already seeded, skipping.");
     return;
   }
+
+  console.log("Seeding database...");
 
   await db.insert(tenants).values([
     { id: "TENANT-1", name: "Primedia", type: "media_owner" },
@@ -143,7 +144,10 @@ async function seed() {
   console.log(`  - ${timeSeriesData.length} analytics data points`);
 }
 
-seed().then(() => process.exit(0)).catch((err) => {
-  console.error("Seed error:", err);
-  process.exit(1);
-});
+const isDirectRun = process.argv[1]?.endsWith("seed.ts");
+if (isDirectRun) {
+  seed().then(() => process.exit(0)).catch((err) => {
+    console.error("Seed error:", err);
+    process.exit(1);
+  });
+}

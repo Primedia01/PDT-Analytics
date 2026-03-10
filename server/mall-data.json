@@ -1,0 +1,2322 @@
+[
+  {
+    "LOCATION": "Alberton City Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 4878036,
+    "SOLD_SLOTS": 2570430,
+    "OCCUPANCY": 52.693953058157014
+  },
+  {
+    "LOCATION": "Alberton City Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 42,
+    "AVAILABLE_SLOTS": 1302,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Alberton City Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Alex Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Alice Lane Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Athlone",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Atlantis Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 24,
+    "AVAILABLE_SLOTS": 744,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Atterbury Value Mart (Mall)",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 64,
+    "AVAILABLE_SLOTS": 1984,
+    "SOLD_SLOTS": 854,
+    "OCCUPANCY": 43.04435483870967
+  },
+  {
+    "LOCATION": "Ballito Junction Regional Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 8,
+    "AVAILABLE_SLOTS": 13008096,
+    "SOLD_SLOTS": 6400480,
+    "OCCUPANCY": 49.20381891400555
+  },
+  {
+    "LOCATION": "Ballito Junction Regional Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 8,
+    "AVAILABLE_SLOTS": 248,
+    "SOLD_SLOTS": 62,
+    "OCCUPANCY": 25
+  },
+  {
+    "LOCATION": "Ballito Junction Regional Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Bambanani Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 6,
+    "AVAILABLE_SLOTS": 186,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Bay West Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 1,
+    "OCCUPANCY": 3.225806451612903
+  },
+  {
+    "LOCATION": "Bayside Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 13,
+    "AVAILABLE_SLOTS": 21138156,
+    "SOLD_SLOTS": 6040440,
+    "OCCUPANCY": 28.576002561434404
+  },
+  {
+    "LOCATION": "Bayside Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 16,
+    "AVAILABLE_SLOTS": 496,
+    "SOLD_SLOTS": 124,
+    "OCCUPANCY": 25
+  },
+  {
+    "LOCATION": "Bayside Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 1,
+    "OCCUPANCY": 3.225806451612903
+  },
+  {
+    "LOCATION": "Bayside Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 20,
+    "AVAILABLE_SLOTS": 620,
+    "SOLD_SLOTS": 252,
+    "OCCUPANCY": 40.64516129032258
+  },
+  {
+    "LOCATION": "Bedfordview Malls",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 9,
+    "AVAILABLE_SLOTS": 279,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Bedworth Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Benmore Gardens Shopping Centre",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 70,
+    "AVAILABLE_SLOTS": 2170,
+    "SOLD_SLOTS": 1574,
+    "OCCUPANCY": 72.53456221198157
+  },
+  {
+    "LOCATION": "Benoni (Mall)",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 10,
+    "AVAILABLE_SLOTS": 310,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Birch Acres Mall (Tembisa)",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Blue Route Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Blue Route Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 99,
+    "AVAILABLE_SLOTS": 3069,
+    "SOLD_SLOTS": 1343,
+    "OCCUPANCY": 43.760182469859885
+  },
+  {
+    "LOCATION": "Bluff Towers Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 16,
+    "AVAILABLE_SLOTS": 496,
+    "SOLD_SLOTS": 160,
+    "OCCUPANCY": 32.25806451612903
+  },
+  {
+    "LOCATION": "Boardwalk Inkwazi Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Boardwalk Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 4878036,
+    "SOLD_SLOTS": 287640,
+    "OCCUPANCY": 5.896635449184877
+  },
+  {
+    "LOCATION": "Boardwalk Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 93,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Bridge City",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Brooklyn Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 10,
+    "AVAILABLE_SLOTS": 16260120,
+    "SOLD_SLOTS": 8403060,
+    "OCCUPANCY": 51.67895439886052
+  },
+  {
+    "LOCATION": "Brooklyn Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 75,
+    "AVAILABLE_SLOTS": 2325,
+    "SOLD_SLOTS": 138,
+    "OCCUPANCY": 5.935483870967742
+  },
+  {
+    "LOCATION": "Brooklyn Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Brooklyn Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 50,
+    "AVAILABLE_SLOTS": 1550,
+    "SOLD_SLOTS": 1487,
+    "OCCUPANCY": 95.93548387096774
+  },
+  {
+    "LOCATION": "Bryanston Shopping Centre",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 31,
+    "AVAILABLE_SLOTS": 961,
+    "SOLD_SLOTS": 444,
+    "OCCUPANCY": 46.20187304890739
+  },
+  {
+    "LOCATION": "BT Ngebs Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Cambridge Crossing Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 10,
+    "OCCUPANCY": 16.129032258064516
+  },
+  {
+    "LOCATION": "Canal Walk Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 19,
+    "AVAILABLE_SLOTS": 30894228,
+    "SOLD_SLOTS": 9858315,
+    "OCCUPANCY": 31.909892682866197
+  },
+  {
+    "LOCATION": "Canal Walk Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 157,
+    "AVAILABLE_SLOTS": 4867,
+    "SOLD_SLOTS": 1395,
+    "OCCUPANCY": 28.662420382165603
+  },
+  {
+    "LOCATION": "Canal Walk Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 4,
+    "AVAILABLE_SLOTS": 124,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Cape Gate Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 4,
+    "AVAILABLE_SLOTS": 6504048,
+    "SOLD_SLOTS": 567930,
+    "OCCUPANCY": 8.731946627700164
+  },
+  {
+    "LOCATION": "Cape Gate Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 51,
+    "AVAILABLE_SLOTS": 1581,
+    "SOLD_SLOTS": 62,
+    "OCCUPANCY": 3.9215686274509802
+  },
+  {
+    "LOCATION": "Cape Town International Airport",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 283,
+    "AVAILABLE_SLOTS": 8773,
+    "SOLD_SLOTS": 1271,
+    "OCCUPANCY": 14.487632508833922
+  },
+  {
+    "LOCATION": "Cape Town International Airport",
+    "DIVISION": "Syndication Sales",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 17,
+    "OCCUPANCY": 27.419354838709676
+  },
+  {
+    "LOCATION": "Carlton Centre Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Cavendish Square Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Cedar Square Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 4,
+    "AVAILABLE_SLOTS": 6504048,
+    "SOLD_SLOTS": 1177560,
+    "OCCUPANCY": 18.10503243518498
+  },
+  {
+    "LOCATION": "Cedar Square Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 15,
+    "AVAILABLE_SLOTS": 465,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Cedar Square Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 9,
+    "AVAILABLE_SLOTS": 279,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Celtis Ridge Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 4,
+    "AVAILABLE_SLOTS": 124,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Centurion Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Centurion Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 160,
+    "AVAILABLE_SLOTS": 4960,
+    "SOLD_SLOTS": 3496,
+    "OCCUPANCY": 70.48387096774194
+  },
+  {
+    "LOCATION": "Chatsworth Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 4878036,
+    "SOLD_SLOTS": 2553090,
+    "OCCUPANCY": 52.33848212682317
+  },
+  {
+    "LOCATION": "Chatsworth Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 52,
+    "AVAILABLE_SLOTS": 1612,
+    "SOLD_SLOTS": 155,
+    "OCCUPANCY": 9.615384615384617
+  },
+  {
+    "LOCATION": "Chatsworth Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Chris Hani Crossing",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Clearwater Mall",
+    "DIVISION": "Mall Adhoc",
+    "TOTAL_STRUCTURE_COUNT": 62,
+    "AVAILABLE_SLOTS": 1922,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Clearwater Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 4878036,
+    "SOLD_SLOTS": 624240,
+    "OCCUPANCY": 12.796953528018243
+  },
+  {
+    "LOCATION": "Clearwater Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 10,
+    "AVAILABLE_SLOTS": 310,
+    "SOLD_SLOTS": 124,
+    "OCCUPANCY": 40
+  },
+  {
+    "LOCATION": "Clearwater Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 4,
+    "AVAILABLE_SLOTS": 124,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Clearwater Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 18,
+    "AVAILABLE_SLOTS": 558,
+    "SOLD_SLOTS": 224,
+    "OCCUPANCY": 40.14336917562724
+  },
+  {
+    "LOCATION": "Coachmans Crossing Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 3,
+    "OCCUPANCY": 4.838709677419355
+  },
+  {
+    "LOCATION": "Comaro Crossing Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 4,
+    "AVAILABLE_SLOTS": 124,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Constantia Village Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 6,
+    "AVAILABLE_SLOTS": 9756072,
+    "SOLD_SLOTS": 2709360,
+    "OCCUPANCY": 27.77101276005343
+  },
+  {
+    "LOCATION": "Constantia Village Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 6,
+    "AVAILABLE_SLOTS": 186,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Constantia Village Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 20,
+    "AVAILABLE_SLOTS": 620,
+    "SOLD_SLOTS": 280,
+    "OCCUPANCY": 45.16129032258064
+  },
+  {
+    "LOCATION": "Cornubia Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 20,
+    "AVAILABLE_SLOTS": 620,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Cornubia Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Cosmo Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Cresta Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 17,
+    "AVAILABLE_SLOTS": 27642204,
+    "SOLD_SLOTS": 9348280,
+    "OCCUPANCY": 33.818866252488405
+  },
+  {
+    "LOCATION": "Cresta Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 117,
+    "AVAILABLE_SLOTS": 3627,
+    "SOLD_SLOTS": 527,
+    "OCCUPANCY": 14.529914529914532
+  },
+  {
+    "LOCATION": "Cresta Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Cullinan Jewel Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Davenport Square Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 7,
+    "AVAILABLE_SLOTS": 217,
+    "SOLD_SLOTS": 93,
+    "OCCUPANCY": 42.857142857142854
+  },
+  {
+    "LOCATION": "Design Square",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 25,
+    "AVAILABLE_SLOTS": 775,
+    "SOLD_SLOTS": 739,
+    "OCCUPANCY": 95.35483870967741
+  },
+  {
+    "LOCATION": "Diamond Pavilion Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Dobsonville Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Douglasdale",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 10,
+    "AVAILABLE_SLOTS": 310,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "East Point Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 4,
+    "AVAILABLE_SLOTS": 6504048,
+    "SOLD_SLOTS": 3598600,
+    "OCCUPANCY": 55.32861996098429
+  },
+  {
+    "LOCATION": "East Point Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 4,
+    "AVAILABLE_SLOTS": 124,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "East Point Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 20,
+    "AVAILABLE_SLOTS": 620,
+    "SOLD_SLOTS": 31,
+    "OCCUPANCY": 5
+  },
+  {
+    "LOCATION": "East Rand Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "East Rand Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 115,
+    "AVAILABLE_SLOTS": 3565,
+    "SOLD_SLOTS": 2214,
+    "OCCUPANCY": 62.10378681626928
+  },
+  {
+    "LOCATION": "Eastgate Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Eastgate Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 286,
+    "AVAILABLE_SLOTS": 8866,
+    "SOLD_SLOTS": 1760,
+    "OCCUPANCY": 19.851116625310176
+  },
+  {
+    "LOCATION": "Edendale",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Eikestad Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 33,
+    "AVAILABLE_SLOTS": 1023,
+    "SOLD_SLOTS": 336,
+    "OCCUPANCY": 32.84457478005865
+  },
+  {
+    "LOCATION": "Emalahleni (Witbank)",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 10,
+    "AVAILABLE_SLOTS": 310,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Empangeni Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 93,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Ferndale on Republic Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Festival Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 18,
+    "AVAILABLE_SLOTS": 558,
+    "SOLD_SLOTS": 248,
+    "OCCUPANCY": 44.44444444444444
+  },
+  {
+    "LOCATION": "Forest Road Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 93,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Fourways Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 31,
+    "AVAILABLE_SLOTS": 50406372,
+    "SOLD_SLOTS": 14115790,
+    "OCCUPANCY": 28.0039793381678
+  },
+  {
+    "LOCATION": "Fourways Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 171,
+    "AVAILABLE_SLOTS": 5301,
+    "SOLD_SLOTS": 1224,
+    "OCCUPANCY": 23.089983022071305
+  },
+  {
+    "LOCATION": "Fourways Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 33,
+    "AVAILABLE_SLOTS": 1023,
+    "SOLD_SLOTS": 248,
+    "OCCUPANCY": 24.242424242424242
+  },
+  {
+    "LOCATION": "Galleria Mall ",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Gardens Shopping Centre",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 1626012,
+    "SOLD_SLOTS": 342720,
+    "OCCUPANCY": 21.07733522261828
+  },
+  {
+    "LOCATION": "Gardens Shopping Centre",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 19,
+    "AVAILABLE_SLOTS": 589,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Gateway Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 3252024,
+    "SOLD_SLOTS": 4688470,
+    "OCCUPANCY": 144.1708302275752
+  },
+  {
+    "LOCATION": "Gateway Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 93,
+    "SOLD_SLOTS": 1,
+    "OCCUPANCY": 1.0752688172043012
+  },
+  {
+    "LOCATION": "Golden Acre Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 3252024,
+    "SOLD_SLOTS": 1756460,
+    "OCCUPANCY": 54.01128650957065
+  },
+  {
+    "LOCATION": "Golden Acre Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 46,
+    "AVAILABLE_SLOTS": 1426,
+    "SOLD_SLOTS": 434,
+    "OCCUPANCY": 30.434782608695656
+  },
+  {
+    "LOCATION": "Golden Walk Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Greenacres Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 12,
+    "AVAILABLE_SLOTS": 19512144,
+    "SOLD_SLOTS": 2823840,
+    "OCCUPANCY": 14.472217917210944
+  },
+  {
+    "LOCATION": "Greenacres Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 41,
+    "AVAILABLE_SLOTS": 1271,
+    "SOLD_SLOTS": 155,
+    "OCCUPANCY": 12.195121951219512
+  },
+  {
+    "LOCATION": "Greenacres Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Greenstone Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 6,
+    "AVAILABLE_SLOTS": 9756072,
+    "SOLD_SLOTS": 10428540,
+    "OCCUPANCY": 106.89281505917545
+  },
+  {
+    "LOCATION": "Greenstone Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 46,
+    "AVAILABLE_SLOTS": 1426,
+    "SOLD_SLOTS": 372,
+    "OCCUPANCY": 26.08695652173913
+  },
+  {
+    "LOCATION": "Grobersdal Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Gugulethu Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 93,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Hatfield Plaza",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 21,
+    "AVAILABLE_SLOTS": 651,
+    "SOLD_SLOTS": 627,
+    "OCCUPANCY": 96.31336405529954
+  },
+  {
+    "LOCATION": "Hayfields Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 6,
+    "AVAILABLE_SLOTS": 186,
+    "SOLD_SLOTS": 67,
+    "OCCUPANCY": 36.02150537634409
+  },
+  {
+    "LOCATION": "Hemingways Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Hemingways Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 161,
+    "AVAILABLE_SLOTS": 4991,
+    "SOLD_SLOTS": 1399,
+    "OCCUPANCY": 28.03045481867361
+  },
+  {
+    "LOCATION": "Horizon View Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 7,
+    "AVAILABLE_SLOTS": 217,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Hyde Park Mall",
+    "DIVISION": "Mall Adhoc",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Hyde Park Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 1626012,
+    "SOLD_SLOTS": 487370,
+    "OCCUPANCY": 29.97333353013385
+  },
+  {
+    "LOCATION": "Hyde Park Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 11,
+    "AVAILABLE_SLOTS": 341,
+    "SOLD_SLOTS": 31,
+    "OCCUPANCY": 9.090909090909092
+  },
+  {
+    "LOCATION": "Ilanga Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Jabulani Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 6,
+    "AVAILABLE_SLOTS": 186,
+    "SOLD_SLOTS": 93,
+    "OCCUPANCY": 50
+  },
+  {
+    "LOCATION": "Jabulani Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Jubilee Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Kalahari Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Kenilworth Centre",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Kenilworth Centre",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 125,
+    "AVAILABLE_SLOTS": 3875,
+    "SOLD_SLOTS": 1029,
+    "OCCUPANCY": 26.55483870967742
+  },
+  {
+    "LOCATION": "Key West Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 6,
+    "AVAILABLE_SLOTS": 9756072,
+    "SOLD_SLOTS": 4186140,
+    "OCCUPANCY": 42.90804741908424
+  },
+  {
+    "LOCATION": "Key West Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 34,
+    "AVAILABLE_SLOTS": 1054,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Key West Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Killarney Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 16,
+    "AVAILABLE_SLOTS": 496,
+    "SOLD_SLOTS": 73,
+    "OCCUPANCY": 14.717741935483872
+  },
+  {
+    "LOCATION": "King Shaka International Airport",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 262,
+    "AVAILABLE_SLOTS": 8122,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Kolonade Retail Park",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 28,
+    "AVAILABLE_SLOTS": 868,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Kolonnade Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 4,
+    "AVAILABLE_SLOTS": 6504048,
+    "SOLD_SLOTS": 5101560,
+    "OCCUPANCY": 78.43669050412913
+  },
+  {
+    "LOCATION": "Kolonnade Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 40,
+    "AVAILABLE_SLOTS": 1240,
+    "SOLD_SLOTS": 344,
+    "OCCUPANCY": 27.741935483870968
+  },
+  {
+    "LOCATION": "Kolonnade Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Krugersdorp",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 10,
+    "AVAILABLE_SLOTS": 310,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Kwa Mashu ",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Kyalami Corner",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 30,
+    "AVAILABLE_SLOTS": 930,
+    "SOLD_SLOTS": 248,
+    "OCCUPANCY": 26.666666666666668
+  },
+  {
+    "LOCATION": "La Lucia Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 11,
+    "AVAILABLE_SLOTS": 17886132,
+    "SOLD_SLOTS": 7072530,
+    "OCCUPANCY": 39.54197587270406
+  },
+  {
+    "LOCATION": "La Lucia Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 46,
+    "AVAILABLE_SLOTS": 1426,
+    "SOLD_SLOTS": 1116,
+    "OCCUPANCY": 78.26086956521739
+  },
+  {
+    "LOCATION": "La Lucia Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "La Lucia Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 45,
+    "AVAILABLE_SLOTS": 1395,
+    "SOLD_SLOTS": 504,
+    "OCCUPANCY": 36.12903225806451
+  },
+  {
+    "LOCATION": "Lakeside Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 10,
+    "AVAILABLE_SLOTS": 16260120,
+    "SOLD_SLOTS": 7689640,
+    "OCCUPANCY": 47.29140990349395
+  },
+  {
+    "LOCATION": "Lakeside Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 44,
+    "AVAILABLE_SLOTS": 1364,
+    "SOLD_SLOTS": 682,
+    "OCCUPANCY": 50
+  },
+  {
+    "LOCATION": "Lakeside Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 72,
+    "AVAILABLE_SLOTS": 2232,
+    "SOLD_SLOTS": 1116,
+    "OCCUPANCY": 50
+  },
+  {
+    "LOCATION": "Leaping Frog Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 93,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Lemo Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Liberty Midlands Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Loch Logan Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 6,
+    "AVAILABLE_SLOTS": 9756072,
+    "SOLD_SLOTS": 7671960,
+    "OCCUPANCY": 78.6377960310256
+  },
+  {
+    "LOCATION": "Loch Logan Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 85,
+    "AVAILABLE_SLOTS": 2635,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Long Beach Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 4,
+    "AVAILABLE_SLOTS": 6504048,
+    "SOLD_SLOTS": 2207910,
+    "OCCUPANCY": 33.946705190367595
+  },
+  {
+    "LOCATION": "Long Beach Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 93,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Lynnwood",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 13,
+    "AVAILABLE_SLOTS": 403,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Mall @ Reds",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Mall of Africa",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 93,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Mall of Tembisa",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Mall of the North",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Mall of the North",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Mall of the South",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 17,
+    "AVAILABLE_SLOTS": 27642204,
+    "SOLD_SLOTS": 8947050,
+    "OCCUPANCY": 32.367353920114326
+  },
+  {
+    "LOCATION": "Mall of the South",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 230,
+    "AVAILABLE_SLOTS": 7130,
+    "SOLD_SLOTS": 2981,
+    "OCCUPANCY": 41.80925666199158
+  },
+  {
+    "LOCATION": "Maponya Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 15,
+    "OCCUPANCY": 24.193548387096776
+  },
+  {
+    "LOCATION": "Maponya Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 165,
+    "AVAILABLE_SLOTS": 5115,
+    "SOLD_SLOTS": 3219,
+    "OCCUPANCY": 62.93255131964809
+  },
+  {
+    "LOCATION": "Masingita Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Maynard Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 29,
+    "AVAILABLE_SLOTS": 899,
+    "SOLD_SLOTS": 196,
+    "OCCUPANCY": 21.802002224694107
+  },
+  {
+    "LOCATION": "Menlyn Park Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 33,
+    "AVAILABLE_SLOTS": 53658396,
+    "SOLD_SLOTS": 19967050,
+    "OCCUPANCY": 37.21141794846048
+  },
+  {
+    "LOCATION": "Menlyn Park Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 222,
+    "AVAILABLE_SLOTS": 6882,
+    "SOLD_SLOTS": 2032,
+    "OCCUPANCY": 29.526300494042427
+  },
+  {
+    "LOCATION": "Menlyn Park Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 5,
+    "AVAILABLE_SLOTS": 155,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Menlyn Park Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 11,
+    "AVAILABLE_SLOTS": 341,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Middelburg Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Middestad Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 6,
+    "AVAILABLE_SLOTS": 9756072,
+    "SOLD_SLOTS": 775620,
+    "OCCUPANCY": 7.950125829329672
+  },
+  {
+    "LOCATION": "Middestad Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 15,
+    "AVAILABLE_SLOTS": 465,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Midlands Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Midlands Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 69,
+    "AVAILABLE_SLOTS": 2139,
+    "SOLD_SLOTS": 952,
+    "OCCUPANCY": 44.50677886863021
+  },
+  {
+    "LOCATION": "Midway Mews Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 5,
+    "AVAILABLE_SLOTS": 155,
+    "SOLD_SLOTS": 10,
+    "OCCUPANCY": 6.451612903225806
+  },
+  {
+    "LOCATION": "Mimosa Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 13,
+    "AVAILABLE_SLOTS": 21138156,
+    "SOLD_SLOTS": 7707870,
+    "OCCUPANCY": 36.46424976710362
+  },
+  {
+    "LOCATION": "Mimosa Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 36,
+    "AVAILABLE_SLOTS": 1116,
+    "SOLD_SLOTS": 558,
+    "OCCUPANCY": 50
+  },
+  {
+    "LOCATION": "Mimosa Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Montana Crossing Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 5,
+    "AVAILABLE_SLOTS": 155,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Monte Casino Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 5,
+    "AVAILABLE_SLOTS": 8130060,
+    "SOLD_SLOTS": 961790,
+    "OCCUPANCY": 11.830047994725748
+  },
+  {
+    "LOCATION": "Mooi River Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Morning Glen Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 13,
+    "AVAILABLE_SLOTS": 403,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Mtuba Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Musgrave Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 21,
+    "AVAILABLE_SLOTS": 651,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "N1 City Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 12,
+    "AVAILABLE_SLOTS": 19512144,
+    "SOLD_SLOTS": 6820440,
+    "OCCUPANCY": 34.95484658169804
+  },
+  {
+    "LOCATION": "N1 City Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 16,
+    "AVAILABLE_SLOTS": 496,
+    "SOLD_SLOTS": 31,
+    "OCCUPANCY": 6.25
+  },
+  {
+    "LOCATION": "N1 City Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "N1 City Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 13,
+    "AVAILABLE_SLOTS": 403,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Nelspruit Plaza Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 10,
+    "AVAILABLE_SLOTS": 310,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Newcastle Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Newtown Junction Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Nicolway Shopping Centre",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Nonesi (Mall)",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "North Park Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 7,
+    "AVAILABLE_SLOTS": 217,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Northgate Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 10,
+    "AVAILABLE_SLOTS": 16260120,
+    "SOLD_SLOTS": 2790030,
+    "OCCUPANCY": 17.158729455871175
+  },
+  {
+    "LOCATION": "Northgate Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 28,
+    "AVAILABLE_SLOTS": 868,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Northgate Shopping Centre",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 126,
+    "AVAILABLE_SLOTS": 3906,
+    "SOLD_SLOTS": 2549,
+    "OCCUPANCY": 65.25857654889913
+  },
+  {
+    "LOCATION": "Nyanga Junction Shopping Centre",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Oceans Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "OR Tambo International Airport",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 539,
+    "AVAILABLE_SLOTS": 16709,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Paarl Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 15,
+    "AVAILABLE_SLOTS": 24390180,
+    "SOLD_SLOTS": 2078010,
+    "OCCUPANCY": 8.519863322041903
+  },
+  {
+    "LOCATION": "Paarl Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 4,
+    "AVAILABLE_SLOTS": 124,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Paarl Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Paarl Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 45,
+    "AVAILABLE_SLOTS": 1395,
+    "SOLD_SLOTS": 616,
+    "OCCUPANCY": 44.157706093189965
+  },
+  {
+    "LOCATION": "Park Meadows",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 25,
+    "AVAILABLE_SLOTS": 775,
+    "SOLD_SLOTS": 252,
+    "OCCUPANCY": 32.516129032258064
+  },
+  {
+    "LOCATION": "Parklands",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 10,
+    "AVAILABLE_SLOTS": 310,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Pavilion Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 24,
+    "AVAILABLE_SLOTS": 39024288,
+    "SOLD_SLOTS": 19053280,
+    "OCCUPANCY": 48.82415791929375
+  },
+  {
+    "LOCATION": "Pavilion Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 93,
+    "AVAILABLE_SLOTS": 2883,
+    "SOLD_SLOTS": 1054,
+    "OCCUPANCY": 36.55913978494624
+  },
+  {
+    "LOCATION": "Pavilion Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 93,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Phoenix Plaza",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Pine Walk Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 5,
+    "AVAILABLE_SLOTS": 155,
+    "SOLD_SLOTS": 43,
+    "OCCUPANCY": 27.741935483870968
+  },
+  {
+    "LOCATION": "Pinecrest Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 50,
+    "AVAILABLE_SLOTS": 1550,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Planet Fitness Centurion",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 36,
+    "AVAILABLE_SLOTS": 1116,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Plattekloof",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 10,
+    "AVAILABLE_SLOTS": 310,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Promenade Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Promenade Shopping Centre ",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Protea Glen Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Randburg Square Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 39,
+    "AVAILABLE_SLOTS": 1209,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Randburg Square Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Riverside Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Riverside Mall (WC)",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 18,
+    "AVAILABLE_SLOTS": 558,
+    "SOLD_SLOTS": 224,
+    "OCCUPANCY": 40.14336917562724
+  },
+  {
+    "LOCATION": "Rosebank Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 5,
+    "AVAILABLE_SLOTS": 8130060,
+    "SOLD_SLOTS": 941110,
+    "OCCUPANCY": 11.57568332829032
+  },
+  {
+    "LOCATION": "Rosebank Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 76,
+    "AVAILABLE_SLOTS": 2356,
+    "SOLD_SLOTS": 340,
+    "OCCUPANCY": 14.431239388794568
+  },
+  {
+    "LOCATION": "Rustenburg Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Sammy Marks Square Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Sandton City Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 93,
+    "SOLD_SLOTS": 1,
+    "OCCUPANCY": 1.0752688172043012
+  },
+  {
+    "LOCATION": "Sandton City Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Savannah Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Somerset Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 4,
+    "AVAILABLE_SLOTS": 6504048,
+    "SOLD_SLOTS": 2623260,
+    "OCCUPANCY": 40.33272817174781
+  },
+  {
+    "LOCATION": "Somerset Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 18,
+    "AVAILABLE_SLOTS": 558,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Somerset Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Soshanguve Crossing Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "South Coast Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 45,
+    "AVAILABLE_SLOTS": 1395,
+    "SOLD_SLOTS": 491,
+    "OCCUPANCY": 35.19713261648745
+  },
+  {
+    "LOCATION": "Southgate Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 21,
+    "AVAILABLE_SLOTS": 34146252,
+    "SOLD_SLOTS": 15937680,
+    "OCCUPANCY": 46.67475657357651
+  },
+  {
+    "LOCATION": "Southgate Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 107,
+    "AVAILABLE_SLOTS": 3317,
+    "SOLD_SLOTS": 434,
+    "OCCUPANCY": 13.084112149532709
+  },
+  {
+    "LOCATION": "Springfield Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 9,
+    "AVAILABLE_SLOTS": 279,
+    "SOLD_SLOTS": 63,
+    "OCCUPANCY": 22.58064516129032
+  },
+  {
+    "LOCATION": "Springs Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 58,
+    "AVAILABLE_SLOTS": 1798,
+    "SOLD_SLOTS": 868,
+    "OCCUPANCY": 48.275862068965516
+  },
+  {
+    "LOCATION": "State Theatre Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Stoneridge Centre",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 69,
+    "AVAILABLE_SLOTS": 2139,
+    "SOLD_SLOTS": 1360,
+    "OCCUPANCY": 63.581112669471715
+  },
+  {
+    "LOCATION": "Sunnypark Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Table Bay Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 4878036,
+    "SOLD_SLOTS": 1492680,
+    "OCCUPANCY": 30.60002017205285
+  },
+  {
+    "LOCATION": "Table Bay Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 40,
+    "AVAILABLE_SLOTS": 1240,
+    "SOLD_SLOTS": 248,
+    "OCCUPANCY": 20
+  },
+  {
+    "LOCATION": "Thavani Mall Consortium",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "The Boulders Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "The Boulders Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 57,
+    "AVAILABLE_SLOTS": 1767,
+    "SOLD_SLOTS": 916,
+    "OCCUPANCY": 51.83927560837578
+  },
+  {
+    "LOCATION": "The Buzz Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 93,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "The Glen Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 3252024,
+    "SOLD_SLOTS": 471240,
+    "OCCUPANCY": 14.490667965550069
+  },
+  {
+    "LOCATION": "The Glen Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 21,
+    "AVAILABLE_SLOTS": 651,
+    "SOLD_SLOTS": 93,
+    "OCCUPANCY": 14.285714285714285
+  },
+  {
+    "LOCATION": "The Mall@Scottsville ",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 6,
+    "AVAILABLE_SLOTS": 186,
+    "SOLD_SLOTS": 186,
+    "OCCUPANCY": 100
+  },
+  {
+    "LOCATION": "The Workshop",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 46,
+    "AVAILABLE_SLOTS": 1426,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "The Zone Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 7,
+    "OCCUPANCY": 22.58064516129032
+  },
+  {
+    "LOCATION": "The Zone Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 16,
+    "AVAILABLE_SLOTS": 496,
+    "SOLD_SLOTS": 224,
+    "OCCUPANCY": 45.16129032258064
+  },
+  {
+    "LOCATION": "Town Square Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 4,
+    "AVAILABLE_SLOTS": 124,
+    "SOLD_SLOTS": 4,
+    "OCCUPANCY": 3.225806451612903
+  },
+  {
+    "LOCATION": "Trade Route Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 8,
+    "AVAILABLE_SLOTS": 13008096,
+    "SOLD_SLOTS": 2827200,
+    "OCCUPANCY": 21.734156943491193
+  },
+  {
+    "LOCATION": "Trade Route Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 60,
+    "AVAILABLE_SLOTS": 1860,
+    "SOLD_SLOTS": 248,
+    "OCCUPANCY": 13.333333333333334
+  },
+  {
+    "LOCATION": "Twin City Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Tyger Valley Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 20,
+    "AVAILABLE_SLOTS": 32520240,
+    "SOLD_SLOTS": 15097730,
+    "OCCUPANCY": 46.42564138518043
+  },
+  {
+    "LOCATION": "Tyger Valley Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 204,
+    "AVAILABLE_SLOTS": 6324,
+    "SOLD_SLOTS": 1581,
+    "OCCUPANCY": 25
+  },
+  {
+    "LOCATION": "Tyger Valley Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Tyger Valley Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 245,
+    "AVAILABLE_SLOTS": 7595,
+    "SOLD_SLOTS": 1753,
+    "OCCUPANCY": 23.08097432521396
+  },
+  {
+    "LOCATION": "Umlazi Mega City Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 27,
+    "AVAILABLE_SLOTS": 837,
+    "SOLD_SLOTS": 289,
+    "OCCUPANCY": 34.52807646356034
+  },
+  {
+    "LOCATION": "V & A Waterfront Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Vaal Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Vaal Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 45,
+    "AVAILABLE_SLOTS": 1395,
+    "SOLD_SLOTS": 713,
+    "OCCUPANCY": 51.11111111111111
+  },
+  {
+    "LOCATION": "Village Square Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 8,
+    "AVAILABLE_SLOTS": 248,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Walmer Park Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 4878036,
+    "SOLD_SLOTS": 5512710,
+    "OCCUPANCY": 113.01085108842986
+  },
+  {
+    "LOCATION": "Walmer Park Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 13,
+    "AVAILABLE_SLOTS": 403,
+    "SOLD_SLOTS": 403,
+    "OCCUPANCY": 100
+  },
+  {
+    "LOCATION": "Walmer Park Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Walmer Park Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 62,
+    "AVAILABLE_SLOTS": 1922,
+    "SOLD_SLOTS": 936,
+    "OCCUPANCY": 48.69927159209157
+  },
+  {
+    "LOCATION": "Watercrest Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Watercrest Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 40,
+    "AVAILABLE_SLOTS": 1240,
+    "SOLD_SLOTS": 870,
+    "OCCUPANCY": 70.16129032258065
+  },
+  {
+    "LOCATION": "Waterfall Corner Mall ",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Waterfall Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 3,
+    "AVAILABLE_SLOTS": 4878036,
+    "SOLD_SLOTS": 4273410,
+    "OCCUPANCY": 87.60513452545246
+  },
+  {
+    "LOCATION": "Waterfall Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 21,
+    "AVAILABLE_SLOTS": 651,
+    "SOLD_SLOTS": 217,
+    "OCCUPANCY": 33.33333333333333
+  },
+  {
+    "LOCATION": "Waterfall Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Waterfall Mall",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 74,
+    "AVAILABLE_SLOTS": 2294,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Weltevreden Park Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Westgate Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 17,
+    "AVAILABLE_SLOTS": 27642204,
+    "SOLD_SLOTS": 7537290,
+    "OCCUPANCY": 27.267326440395273
+  },
+  {
+    "LOCATION": "Westgate Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 74,
+    "AVAILABLE_SLOTS": 2294,
+    "SOLD_SLOTS": 372,
+    "OCCUPANCY": 16.216216216216218
+  },
+  {
+    "LOCATION": "Westgate Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "WESTVILLE",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 11,
+    "AVAILABLE_SLOTS": 341,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Westville Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Westwood Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 2,
+    "AVAILABLE_SLOTS": 62,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Willow Way Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 4,
+    "AVAILABLE_SLOTS": 124,
+    "SOLD_SLOTS": 7,
+    "OCCUPANCY": 5.64516129032258
+  },
+  {
+    "LOCATION": "Wonderboom Junction",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 20,
+    "AVAILABLE_SLOTS": 620,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Wonderpark Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 26,
+    "AVAILABLE_SLOTS": 806,
+    "SOLD_SLOTS": 84,
+    "OCCUPANCY": 10.421836228287841
+  },
+  {
+    "LOCATION": "Wonderpark Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Woodlands Mall",
+    "DIVISION": "Mall Adhoc",
+    "TOTAL_STRUCTURE_COUNT": 31,
+    "AVAILABLE_SLOTS": 961,
+    "SOLD_SLOTS": 341,
+    "OCCUPANCY": 35.483870967741936
+  },
+  {
+    "LOCATION": "Woodlands Mall",
+    "DIVISION": "Mall Digital",
+    "TOTAL_STRUCTURE_COUNT": 7,
+    "AVAILABLE_SLOTS": 11382084,
+    "SOLD_SLOTS": 928440,
+    "OCCUPANCY": 8.157029942847021
+  },
+  {
+    "LOCATION": "Woodlands Mall",
+    "DIVISION": "Mall Static",
+    "TOTAL_STRUCTURE_COUNT": 11,
+    "AVAILABLE_SLOTS": 341,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Woodlands Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  },
+  {
+    "LOCATION": "Woodmead Retail Park",
+    "DIVISION": "Static - TLC",
+    "TOTAL_STRUCTURE_COUNT": 44,
+    "AVAILABLE_SLOTS": 1364,
+    "SOLD_SLOTS": 944,
+    "OCCUPANCY": 69.20821114369502
+  },
+  {
+    "LOCATION": "Zevenwacht Mall",
+    "DIVISION": "Prime Courts",
+    "TOTAL_STRUCTURE_COUNT": 1,
+    "AVAILABLE_SLOTS": 31,
+    "SOLD_SLOTS": 0,
+    "OCCUPANCY": 0
+  }
+]

@@ -291,7 +291,7 @@ function CSVImportDialog({
 
   const downloadTemplate = () => {
     const headers = "id,assetName,assetType,mallId,zone,floor,screenSize,mediaFormat,posX,posY,posZ,dailyImpressions,weeklyImpressions,dwellTimeSeconds,engagementScore";
-    const example = "AST-99001,Screen 101,Screen,MALL-1001,Food Court,1,55 inch,Digital Video,5.2,1.0,-3.4,2500,17500,45,72";
+    const example = "AST-99001,Screen 101,Screen,MALL-0095,Food Court,1,55 inch,Digital Video,5.2,1.0,-3.4,2500,17500,45,72";
     const csv = `${headers}\n${example}`;
     const blob = new Blob([csv], { type: "text/csv" });
     const url = URL.createObjectURL(blob);

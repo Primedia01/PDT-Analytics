@@ -18,7 +18,7 @@ const FALLBACK_USERS: Record<Role, User> = {
   internal: { id: "U2", name: "Sarah Jenkins", email: "sarah@primedia.co.za", role: "internal", organization: "Primedia", tenantId: "TENANT-1" },
   sales: { id: "U3", name: "Michael Chang", email: "michael@primedia.co.za", role: "sales", organization: "Primedia Sales", tenantId: "TENANT-1" },
   advertiser: { id: "U4", name: "Emma Watson", email: "emma@adidas.com", role: "advertiser", organization: "Adidas", tenantId: "TENANT-2" },
-  mall_partner: { id: "U5", name: "David Ndlovu", email: "david@mallofafrica.co.za", role: "mall_partner", organization: "Mall of Africa", tenantId: "TENANT-3", allowedMalls: ["MALL-1001"] },
+  mall_partner: { id: "U5", name: "David Ndlovu", email: "david@mallofafrica.co.za", role: "mall_partner", organization: "Mall of Africa", tenantId: "TENANT-3", allowedMalls: ["MALL-0095"] },
 };
 
 type AuthContextType = {

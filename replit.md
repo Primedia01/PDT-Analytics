@@ -1,6 +1,6 @@
 # RetailTwin Analytics
 
-Retail Media Operating System — a full-stack analytics platform for a portfolio of 27 South African shopping malls with digital twin visualization, digital marketing asset management (300 assets), audience analytics, portfolio-wide reporting in ZAR, multi-tenant RBAC, and a programmatic media marketplace.
+Retail Media Operating System — a full-stack analytics platform for a portfolio of 185 real Primedia South African shopping malls with digital twin visualization, 7,550 digital ad assets (from real inventory data), audience analytics, portfolio-wide reporting in ZAR, multi-tenant RBAC, and a programmatic media marketplace.
 
 ## Architecture
 
@@ -12,8 +12,8 @@ Retail Media Operating System — a full-stack analytics platform for a portfoli
 
 - `tenants` — Multi-tenant organizations (media_owner, advertiser, mall_operator)
 - `users` — Users with RBAC roles (admin, internal, sales, advertiser, mall_partner)
-- `malls` — 27 South African shopping malls with geo coordinates
-- `assets` — 300 digital advertising assets (billboards, screens, lightboxes, etc.) with 3D positions
+- `malls` — 185 real Primedia South African shopping malls with geo coordinates
+- `assets` — 7,550 digital advertising assets (from real inventory spreadsheet) with 3D positions
 - `campaigns` — Advertiser campaigns with budget, dates, audience targeting
 - `analytics_data` — Time-series portfolio analytics (impressions, footfall)
 
@@ -32,7 +32,7 @@ Retail Media Operating System — a full-stack analytics platform for a portfoli
 
 - `GET /api/tenants` — All tenants
 - `GET /api/users` — All users (passwords excluded)
-- `GET /api/malls` — All 27 malls
+- `GET /api/malls` — All 185 malls
 - `GET /api/assets?mallId=&tenantId=&type=` — Assets with optional filters
 - `POST /api/assets` — Create a single asset
 - `POST /api/assets/bulk` — Bulk import assets (body: `{ assets: [...] }`, returns `{ created, errors }`)

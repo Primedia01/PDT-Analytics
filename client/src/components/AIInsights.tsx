@@ -28,7 +28,7 @@ export function AIInsights() {
       subtitle: "Location: Mall of Africa Food Court",
       description: "Footfall: 32k daily shoppers | Current assets: 0",
       recommendation: "Deploy Digital Screen. Estimated revenue: R95k per month.",
-      action: () => setLocation("/explorer?mallId=MALL-1001&opportunity=true")
+      action: () => setLocation("/explorer?mallId=MALL-0095&opportunity=true")
     },
     {
       agent: "Portfolio Intelligence Agent",
